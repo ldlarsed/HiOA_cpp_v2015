@@ -8,20 +8,29 @@ using namespace std;
 
 
 //Number of roulette spins
-int MAX = 1000000;
+const int MAX = 1000000;
 
 //Counting all the spins
 int count = 0;
+//We put the reuslts of a sequnce in this array. Assuming that the sequence will neverr be longer that 50
+const int MAX_SEQ = 50;
+int seq[MAX_SEQ];
 
+//Variables for the sequence 0 = black, 1 = red
+int spins;
 
-void hello(){
-	printf("Hello World");
+int spinWheel(int min, int max){
+	return rand() % 2;
+
 }
 
-int getRandomNumberInRange(int min, int max){
-	return min+(rand() % (max-min+1));
+void createSequence(){
+
+	
 
 }
+
+
 
 void randomNumbers(){
 
@@ -29,7 +38,7 @@ void randomNumbers(){
 	int r = 0;
 
 	while(i < 10){
-		cout << getRandomNumberInRange(0,1) << (rand() % 2) << endl;
+		cout << spinWheel(0,1) << (rand() % 2) << endl;
 		i++;
 	}
 
@@ -40,6 +49,7 @@ void randomNumbers(){
 main(){
 
 	//hello();
+	//Resetting the sead and using time as random variable
 	srand(time(NULL));
 	randomNumbers();
 }
