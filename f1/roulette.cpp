@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <chrono>
 
 
 using namespace std;
@@ -13,7 +12,6 @@ const int MIN = 0, MAX = 1;
 const int MAX_LENGTH = 40;
 int seq[MAX_LENGTH];
 int largest_seq_present = 0;
-//SLUTTET HER SKAL FÅ DET TIL Å FUNGERE MED CHRONO start_time, end_time;
 
 int getRandom(int min, int max){
 	return rand() % 2;
@@ -21,7 +19,6 @@ int getRandom(int min, int max){
 }
 
 void createSequences(){
-	//start_time = chrono::high_resolution_clock::now();
 	int rand = 0, rand_old=0, count=1;
 	
 	for(int i=1; i<=SPIN_COUNT; i++){
@@ -48,20 +45,15 @@ void createSequences(){
 
 void getResults(){
 	createSequences();
-	//end_time = chrono::high_resolution_clock::now();
-	//auto time_duration = end_time - start_time;
-	//auto time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
 	string output;
 	for(int i = 1; i <= largest_seq_present; i++){
 		//output += string(i) + ":" + seq[i]+"\n";
 		cout << i << ":\t" << seq[i] << endl;
 	}
-	//cout << "Time: " << time_ms << " ms" << endl;
 }
 
 
 main(){
-
 	//Resetting the sead and using time as random variable
 	srand(time(NULL));
 	getResults();

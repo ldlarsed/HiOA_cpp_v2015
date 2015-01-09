@@ -21,6 +21,7 @@ public class Roulette {
 	private static final int MAX_LENGTH = 40;
 	private long exec_time;
 	private int largest_seq_present = 0;
+	private static boolean take_time;
 
 	private int getRandom(int min, int max) {
 		if (max <= min || max < 0 || min < 0)
@@ -33,7 +34,8 @@ public class Roulette {
 	 */
 
 	private void createSequencesMap() {
-		exec_time = System.currentTimeMillis();
+		if (take_time)
+			exec_time = System.currentTimeMillis();
 		seq = new HashMap<Integer, Integer>();
 		int rand = 0, rand_old = 0, count = 1;
 
@@ -76,9 +78,9 @@ public class Roulette {
 			sb.append(i).append(":\t").append(seq.get(i)).append("\n");
 			i_old = i;
 		}
-		sb.append("Time: ").append(exec_time).append(" ms");
+		if (take_time)
+			sb.append("Time: ").append(exec_time).append(" ms");
 		System.out.println(sb.toString());
-
 	}
 
 	/*
@@ -86,7 +88,8 @@ public class Roulette {
 	 */
 
 	private void createSequencesArr() {
-		exec_time = System.currentTimeMillis();
+		if (take_time)
+			exec_time = System.currentTimeMillis();
 		seq2 = new int[MAX_LENGTH];
 		int rand = 0, rand_old = 0, count = 1;
 
@@ -114,37 +117,49 @@ public class Roulette {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 1; i <= largest_seq_present; i++)
 			sb.append(i).append(":\t").append(seq2[i]).append("\n");
-		sb.append("Time: ").append(exec_time).append(" ms");
+		if (take_time)
+			sb.append("Time: ").append(exec_time).append(" ms");
 		System.out.println(sb.toString());
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out
-				.println("Choose collection for your benchmark:\n1: HashMap\n2: Array\n0: Quit");
-		while (sc.hasNext()) {
-			switch (sc.nextLine()) {
-			case "0":
-				System.out.println("Terminating. Goodbye!");
-				sc.close();
-				System.exit(0);
-				break;
-			case "1":
-				System.out.print(SPIN_COUNT);
-				System.out.println(" spins in HashMap");
-				new Roulette().getResultsMap();
-				break;
-			case "2":
+		try {
+			String parm = args[0];
+			if (parm.equals("--no-time")) {
+				take_time = false;
 				System.out.print(SPIN_COUNT);
 				System.out.println(" spins in Array");
 				new Roulette().getResultsArr();
-				break;
-			default:
-				System.out
-						.println("Wrong choice. Please try again (enter 0 to terminate)");
-				break;
 			}
+		} catch (ArrayIndexOutOfBoundsException e) {
+			take_time = true;
+			Scanner sc = new Scanner(System.in);
+			System.out
+					.println("Choose collection for your benchmark:\n1: HashMap\n2: Array\n0: Quit");
+			while (sc.hasNext()) {
+				switch (sc.nextLine()) {
+				case "0":
+					System.out.println("Terminating. Goodbye!");
+					sc.close();
+					System.exit(0);
+					break;
+				case "1":
+					System.out.print(SPIN_COUNT);
+					System.out.println(" spins in HashMap");
+					new Roulette().getResultsMap();
+					break;
+				case "2":
+					System.out.print(SPIN_COUNT);
+					System.out.println(" spins in Array");
+					new Roulette().getResultsArr();
+					break;
+				default:
+					System.out
+							.println("Wrong choice. Please try again (enter 0 to terminate)");
+					break;
+				}
+			}
+			sc.close();
 		}
-		sc.close();
 	}
 }
