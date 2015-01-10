@@ -14,14 +14,22 @@ import java.util.Set;
  */
 public class Roulette {
 
-	private static final int SPIN_COUNT = 10_000_000;
+	private static int SPIN_COUNT = 10_000_000;
 	private static final int MIN = 0, MAX = 1;
 	private Map<Integer, Integer> seq;
 	private int[] seq2;
 	private static final int MAX_LENGTH = 40;
-	private long exec_time;
+	private long exec_time = 0;
 	private int largest_seq_present = 0;
 	private static boolean take_time;
+
+	public Roulette(int spins) {
+		this.SPIN_COUNT = spins;
+	}
+
+	private void takeTimeStamp() {
+		exec_time = System.currentTimeMillis() - exec_time;
+	}
 
 	private int getRandom(int min, int max) {
 		if (max <= min || max < 0 || min < 0)
@@ -122,44 +130,54 @@ public class Roulette {
 		System.out.println(sb.toString());
 	}
 
+	private static void runStandard(int param) {
+		take_time = false;
+		System.out.print(param);
+		System.out.println(" spins in Array");
+		new Roulette(param).getResultsArr();
+	}
+
 	public static void main(String[] args) {
+		int param = 10_000_000;
 		try {
-			String parm = args[0];
-			if (parm.equals("--no-time")) {
-				take_time = false;
-				System.out.print(SPIN_COUNT);
-				System.out.println(" spins in Array");
-				new Roulette().getResultsArr();
-			}
-		} catch (ArrayIndexOutOfBoundsException e) {
-			take_time = true;
-			Scanner sc = new Scanner(System.in);
-			System.out
-					.println("Choose collection for your benchmark:\n1: HashMap\n2: Array\n0: Quit");
-			while (sc.hasNext()) {
-				switch (sc.nextLine()) {
-				case "0":
-					System.out.println("Terminating. Goodbye!");
-					sc.close();
-					System.exit(0);
-					break;
-				case "1":
-					System.out.print(SPIN_COUNT);
-					System.out.println(" spins in HashMap");
-					new Roulette().getResultsMap();
-					break;
-				case "2":
-					System.out.print(SPIN_COUNT);
-					System.out.println(" spins in Array");
-					new Roulette().getResultsArr();
-					break;
-				default:
-					System.out
-							.println("Wrong choice. Please try again (enter 0 to terminate)");
-					break;
+			if (args[0] != null)
+				param = Integer.parseInt(args[0]);
+			if (args[1].equals("-o")) {
+				take_time = true;
+				Scanner sc = new Scanner(System.in);
+				System.out
+						.println("Choose collection for your benchmark:\n1: HashMap\n2: Array\n0: Quit");
+				while (sc.hasNext()) {
+					switch (sc.nextLine()) {
+					case "0":
+						System.out.println("Terminating. Goodbye!");
+						sc.close();
+						System.exit(0);
+						break;
+					case "1":
+						System.out.print(SPIN_COUNT);
+						System.out.println(" spins in HashMap");
+						new Roulette(param).getResultsMap();
+						break;
+					case "2":
+						System.out.print(SPIN_COUNT);
+						System.out.println(" spins in Array");
+						new Roulette(param).getResultsArr();
+						break;
+					default:
+						System.out
+								.println("Wrong choice. Please try again (enter 0 to terminate)");
+						break;
+					}
 				}
+				sc.close();
 			}
-			sc.close();
+
+		} catch (ArrayIndexOutOfBoundsException e) {
+			runStandard(param);
+		} catch (NumberFormatException e) {
+			System.out.println("Please pass an integer larger than 1000 as a first parameter");
+			System.out.println(e.getMessage());
 		}
 	}
 }
