@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class Roulette {
 
-	private static int SPIN_COUNT = 10_000_000;
+	private int SPIN_COUNT;
 	private static final int MIN = 0, MAX = 1;
 	private Map<Integer, Integer> seq;
 	private int[] seq2;
@@ -22,6 +22,7 @@ public class Roulette {
 	private long exec_time = 0;
 	private int largest_seq_present = 0;
 	private static boolean take_time;
+	private int c_red = 0, c_black = 0; // 0 = rød, 1 = sort
 
 	public Roulette(int spins) {
 		this.SPIN_COUNT = spins;
@@ -29,6 +30,13 @@ public class Roulette {
 
 	private void takeTimeStamp() {
 		exec_time = System.currentTimeMillis() - exec_time;
+	}
+
+	private void countColor(int numb) {
+		if (numb == 0)
+			c_red++;
+		else
+			c_black++;
 	}
 
 	private int getRandom(int min, int max) {
@@ -43,7 +51,7 @@ public class Roulette {
 
 	private void createSequencesMap() {
 		if (take_time)
-			exec_time = System.currentTimeMillis();
+			takeTimeStamp();
 		seq = new HashMap<Integer, Integer>();
 		int rand = 0, rand_old = 0, count = 1;
 
@@ -63,13 +71,14 @@ public class Roulette {
 					seq.put(count, 1);
 				count = 1;
 			}
+			countColor(rand);
 			rand_old = rand;
 		}
 	}
 
 	public void getResultsMap() {
 		createSequencesMap();
-		exec_time = System.currentTimeMillis() - exec_time;
+		takeTimeStamp();
 		StringBuilder sb = new StringBuilder();
 		Set<Integer> keys = seq.keySet();
 		Iterator<Integer> iter = keys.iterator();
@@ -88,6 +97,8 @@ public class Roulette {
 		}
 		if (take_time)
 			sb.append("Time: ").append(exec_time).append(" ms");
+		sb.append("\nRed:\t").append(c_red);
+		sb.append("\nBlack:\t").append(c_black);
 		System.out.println(sb.toString());
 	}
 
@@ -97,7 +108,7 @@ public class Roulette {
 
 	private void createSequencesArr() {
 		if (take_time)
-			exec_time = System.currentTimeMillis();
+			takeTimeStamp();
 		seq2 = new int[MAX_LENGTH];
 		int rand = 0, rand_old = 0, count = 1;
 
@@ -115,33 +126,38 @@ public class Roulette {
 					largest_seq_present = count;
 				count = 1;
 			}
+			countColor(rand);
 			rand_old = rand;
 		}
 	}
 
 	public void getResultsArr() {
 		createSequencesArr();
-		exec_time = System.currentTimeMillis() - exec_time;
+		takeTimeStamp();
 		StringBuilder sb = new StringBuilder();
 		for (int i = 1; i <= largest_seq_present; i++)
 			sb.append(i).append(":\t").append(seq2[i]).append("\n");
 		if (take_time)
 			sb.append("Time: ").append(exec_time).append(" ms");
+		sb.append("\nRed:\t").append(c_red);
+		sb.append("\nBlack:\t").append(c_black);
 		System.out.println(sb.toString());
 	}
 
 	private static void runStandard(int param) {
 		take_time = false;
 		System.out.print(param);
-		System.out.println(" spins in Array");
+		System.out.println(" spins in int Array");
 		new Roulette(param).getResultsArr();
 	}
 
 	public static void main(String[] args) {
 		int param = 10_000_000;
 		try {
-			if (args[0] != null)
+			if (args[0] != null){
 				param = Integer.parseInt(args[0]);
+				if(param < 100) throw new IllegalArgumentException("Too low number.");
+			}
 			if (args[1].equals("-o")) {
 				take_time = true;
 				Scanner sc = new Scanner(System.in);
@@ -155,12 +171,12 @@ public class Roulette {
 						System.exit(0);
 						break;
 					case "1":
-						System.out.print(SPIN_COUNT);
+						System.out.print(param);
 						System.out.println(" spins in HashMap");
 						new Roulette(param).getResultsMap();
 						break;
 					case "2":
-						System.out.print(SPIN_COUNT);
+						System.out.print(param);
 						System.out.println(" spins in Array");
 						new Roulette(param).getResultsArr();
 						break;
@@ -174,10 +190,11 @@ public class Roulette {
 			}
 
 		} catch (ArrayIndexOutOfBoundsException e) {
+			// If started without parameters
 			runStandard(param);
 		} catch (NumberFormatException e) {
-			System.out.println("Please pass an integer larger than 1000 as a first parameter");
-			System.out.println(e.getMessage());
+			System.out
+					.println("Please pass an integer as first parameter.");
 		}
 	}
 }
