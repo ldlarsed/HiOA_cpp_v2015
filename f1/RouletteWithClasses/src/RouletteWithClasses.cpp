@@ -7,19 +7,33 @@
 //============================================================================
 
 #include <iostream>
+#include <cstdlib>
 #include "Roulette.h"
 using namespace std;
 
-int main() {
+void showNumberSpins(int spins){
+	cout << "Spins: " << spins << endl << endl;
+}
 
-	cout << "Creating roulette" << endl;
-	Roulette roulette;
+int main(int argc, char *argv[]) {
 
-	for(int i = 0; i < 10; i++){
-		cout << roulette.getRandom() << endl;
+	if (argc >= 2) {
+		cout << "Following arguments received : ";
+		for (int i = 0; i < argc; i++) {
+			cout << argv[i] << ", ";
+		}
+		cout << endl;
+		int spins = atoi(argv[1]);
+		showNumberSpins(spins);
+		Roulette roulette(spins);
+		roulette.showResults();
+
+	} else {
+		{
+			showNumberSpins(10000000);
+			Roulette roulette;
+			roulette.showResults();
+		}
 	}
-
-	roulette.showResults();
-
 	return 0;
 }

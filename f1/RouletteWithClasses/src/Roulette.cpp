@@ -17,7 +17,7 @@ using namespace std;
 int seq[40];
 
 Roulette::Roulette() {
-	spin_count = 1000000;
+	spin_count = 10000000;
 	MAX_LENGTH = 40;
 	MIN = 0;
 	MAX = 1;
@@ -26,18 +26,19 @@ Roulette::Roulette() {
 	srand(time(NULL));
 }
 
-//Roulette::Roulette(int spins) {
-//	this->spin_count = spins;
-//	MAX_LENGTH = 40;
-//	MIN = 0;
-//	MAX = 1;
-//	largest_seq_present = 0;
-//	c_black = 0, c_red = 0;
-//}
+Roulette::Roulette(int spins) {
+	this->spin_count = spins;
+	MAX_LENGTH = 40;
+	MIN = 0;
+	MAX = 1;
+	largest_seq_present = 0;
+	c_black = 0, c_red = 0;
+	srand(time(NULL));
+}
 
-//Roulette::~Roulette() {
-//	cout << "Program finished";
-//}
+Roulette::~Roulette() {
+	cout << "Program finished";
+}
 
 void Roulette::countColor(int numb) {
 	if (numb == 0)
@@ -51,7 +52,6 @@ int Roulette::getRandom() {
 }
 
 void Roulette::createSequences() {
-	cout << "Creating sequences" << endl;
 	int rand = 0, rand_old = 0, count = 1;
 
 	for (int i = 1; i <= spin_count; i++) {
@@ -71,20 +71,19 @@ void Roulette::createSequences() {
 		countColor(rand);
 		rand_old = rand;
 	}
-	cout << "Largest seq: " << largest_seq_present << endl;
 }
 
 void Roulette::showResults(){
 	createSequences();
-	cout << "sequences created" << endl;
 	stringstream ss;
 
 	for(int i = 1; i <= largest_seq_present; i++){
-		cout << i << ":\t" << seq[i] << endl;
+		ss << i << ":\t" << seq[i] << endl;
 	}
+	ss << endl;
+	ss << "Red:\t" << c_red << endl;
+	ss << "Black:\t" << c_black << endl;
 
-//	string results = ss.str();
-//
-//	cout << results << endl;;
+	cout << ss.str() << endl;;
 
 }

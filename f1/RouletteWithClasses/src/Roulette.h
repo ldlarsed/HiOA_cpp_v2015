@@ -19,16 +19,15 @@ private:
 	int c_red, c_black; //0 = red, 1 = black
 
 	void countColor(int numb);
-
+	int getRandom();
 	void createSequences();
 
 public:
 	Roulette();
 	Roulette(int spins);
-//	virtual ~Roulette();
+	virtual ~Roulette();
 
 	void showResults();
-	int getRandom();
 };
 
 #endif /* ROULETTE_H_ */

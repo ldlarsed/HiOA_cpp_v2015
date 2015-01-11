@@ -12,10 +12,18 @@ const int MIN = 0, MAX = 1;
 const int MAX_LENGTH = 40;
 int seq[MAX_LENGTH];
 int largest_seq_present = 0;
+int c_red, c_black;
 
 int getRandom(int min, int max){
 	return rand() % 2;
 
+}
+
+void countColor(int numb) {
+	if (numb == 0)
+		c_red++;
+	else
+		c_black++;
 }
 
 void createSequences(){
@@ -38,6 +46,7 @@ void createSequences(){
 				largest_seq_present = count;
 			count = 1;
 		}
+		countColor(rand);
 		//Oppdaterer rand_old for nest interasjon
 		rand_old = rand;
 	}
@@ -50,6 +59,8 @@ void getResults(){
 		//output += string(i) + ":" + seq[i]+"\n";
 		cout << i << ":\t" << seq[i] << endl;
 	}
+	cout << "Red:\t" << c_red << endl;
+	cout << "Black:\t" << c_black << endl;
 }
 
 
