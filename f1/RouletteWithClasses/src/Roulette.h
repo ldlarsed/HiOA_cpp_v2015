@@ -12,12 +12,23 @@ class Roulette {
 
 private:
 	int spin_count;
-	int const MIN = 0, MAX = 1;
-	int seq
+	int MIN, MAX;
+	int MAX_LENGTH;
+	//int seq[];
+	int largest_seq_present;
+	int c_red, c_black; //0 = red, 1 = black
+
+	void countColor(int numb);
+
+	void createSequences();
 
 public:
 	Roulette();
-	virtual ~Roulette();
+	Roulette(int spins);
+//	virtual ~Roulette();
+
+	void showResults();
+	int getRandom();
 };
 
 #endif /* ROULETTE_H_ */

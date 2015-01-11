@@ -7,9 +7,19 @@
 //============================================================================
 
 #include <iostream>
+#include "Roulette.h"
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+
+	cout << "Creating roulette" << endl;
+	Roulette roulette;
+
+	for(int i = 0; i < 10; i++){
+		cout << roulette.getRandom() << endl;
+	}
+
+	roulette.showResults();
+
 	return 0;
 }
