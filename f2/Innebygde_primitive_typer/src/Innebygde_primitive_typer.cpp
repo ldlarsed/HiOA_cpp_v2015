@@ -11,6 +11,11 @@
 
 using namespace std;
 
+//float f;
+//int i;
+//char c;
+//double d;
+
 void print_ascii_table() {
 	cout << endl << "Printig out ascii table" << endl;
 	int count = 1;

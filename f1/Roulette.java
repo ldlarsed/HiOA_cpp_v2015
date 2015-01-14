@@ -1,13 +1,10 @@
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.LinkedList;
 import java.util.Set;
 
 /**
- * Klassen har to set med metoder. Den første benytter seg av HashMap og den
- * andre av en vanlig array som settes til MAX_LENGTH plasser. I gjennomsnitt er
- * versjonen med array ca 100 ms raskere.
+ * Java versjon for Roulette shoutout.
  * 
  * @author Lukas Larsed, s198569@stud.hioa.no
  *
@@ -16,22 +13,20 @@ public class Roulette {
 
 	private int SPIN_COUNT;
 	private static final int MIN = 0, MAX = 1;
-	private Map<Integer, Integer> seq;
-	private int[] seq2;
-	private static final int MAX_LENGTH = 40;
-	private long exec_time = 0;
-	private int largest_seq_present = 0;
-	private static boolean take_time;
+	private static final int MAX_LENGTH = 40; // brukes for arrayversjon
+	private int largest_seq_present = 0; // brukes for arrayversjon
 	private int c_red = 0, c_black = 0; // 0 = rød, 1 = sort
 
 	public Roulette(int spins) {
 		this.SPIN_COUNT = spins;
+		runStandard();
 	}
-
-	private void takeTimeStamp() {
-		exec_time = System.currentTimeMillis() - exec_time;
-	}
-
+	
+	/**
+	 * Teller farge
+	 * 
+	 * @param numb
+	 */
 	private void countColor(int numb) {
 		if (numb == 0)
 			c_red++;
@@ -39,20 +34,68 @@ public class Roulette {
 			c_black++;
 	}
 
+	/**
+	 * Lager tilfedlige tall
+	 * 
+	 * @param min
+	 * @param max
+	 * @return
+	 */
 	private int getRandom(int min, int max) {
 		if (max <= min || max < 0 || min < 0)
 			throw new IllegalArgumentException();
 		return (int) (Math.random() * (max - min + 1) + min);
 	}
 
-	/*
-	 * Versjon med Map
-	 */
+	private LinkedList<Integer> createSequencesLinkedList() {
+		LinkedList<Integer> seq = new LinkedList<Integer>();
+		int rand = 0, rand_old = 0, index = 1;
 
-	private void createSequencesMap() {
-		if (take_time)
-			takeTimeStamp();
-		seq = new HashMap<Integer, Integer>();
+		for (int i = 1; i <= MAX_LENGTH; i++) {
+			seq.add(0);
+		}
+		
+		for (int i = 1; i <= SPIN_COUNT; i++) {
+			if (i == 1) {
+				rand = getRandom(MIN, MAX);
+				rand_old = rand;
+			}
+			rand = getRandom(MIN, MAX);
+			if (rand == rand_old)
+				index++;
+			else {
+				try {
+					Integer current_index = seq.get(index);
+					seq.set(index, current_index + 1);
+				} catch (IndexOutOfBoundsException e) {
+					seq.set(index, 1);
+				} 
+				index = 1;
+			}
+			countColor(rand);
+			rand_old = rand;
+		}
+		return seq;
+	}
+
+	private void getResultsLinkedList(LinkedList<Integer> seq) {
+		while(seq.peekLast()==0) seq.removeLast();
+		StringBuilder sb = new StringBuilder();
+		int i = 1;
+		seq.removeFirst();
+		while (!seq.isEmpty()) {
+			sb.append(i++).append(":\t").append(seq.removeFirst()).append("\n");
+		}
+		sb.append("\nRed:\t").append(c_red);
+		sb.append("\nBlack:\t").append(c_black);
+		System.out.println(sb.toString());
+	}
+
+	/**
+	 * HashMap
+	 */
+	private HashMap<Integer, Integer> createSequencesMap() {
+		HashMap<Integer, Integer> seq = new HashMap<Integer, Integer>();
 		int rand = 0, rand_old = 0, count = 1;
 
 		for (int i = 1; i <= SPIN_COUNT; i++) {
@@ -74,11 +117,10 @@ public class Roulette {
 			countColor(rand);
 			rand_old = rand;
 		}
+		return seq;
 	}
 
-	public void getResultsMap() {
-		createSequencesMap();
-		takeTimeStamp();
+	private void getResultsMap(HashMap<Integer, Integer> seq) {
 		StringBuilder sb = new StringBuilder();
 		Set<Integer> keys = seq.keySet();
 		Iterator<Integer> iter = keys.iterator();
@@ -95,21 +137,16 @@ public class Roulette {
 			sb.append(i).append(":\t").append(seq.get(i)).append("\n");
 			i_old = i;
 		}
-		if (take_time)
-			sb.append("Time: ").append(exec_time).append(" ms");
 		sb.append("\nRed:\t").append(c_red);
 		sb.append("\nBlack:\t").append(c_black);
 		System.out.println(sb.toString());
 	}
 
-	/*
-	 * Versjon med int array
+	/**
+	 * int[]
 	 */
-
-	private void createSequencesArr() {
-		if (take_time)
-			takeTimeStamp();
-		seq2 = new int[MAX_LENGTH];
+	private int[] createSequencesArr() {
+		int[] seq = new int[MAX_LENGTH];
 		int rand = 0, rand_old = 0, count = 1;
 
 		for (int i = 1; i <= SPIN_COUNT; i++) {
@@ -121,7 +158,7 @@ public class Roulette {
 			if (rand == rand_old)
 				count++;
 			else {
-				seq2[count]++;
+				seq[count]++;
 				if (count > largest_seq_present)
 					largest_seq_present = count;
 				count = 1;
@@ -129,72 +166,35 @@ public class Roulette {
 			countColor(rand);
 			rand_old = rand;
 		}
+		return seq;
 	}
 
-	public void getResultsArr() {
-		createSequencesArr();
-		takeTimeStamp();
+	private void getResultsArr(int[] seq) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 1; i <= largest_seq_present; i++)
-			sb.append(i).append(":\t").append(seq2[i]).append("\n");
-		if (take_time)
-			sb.append("Time: ").append(exec_time).append(" ms");
+			sb.append(i).append(":\t").append(seq[i]).append("\n");
 		sb.append("\nRed:\t").append(c_red);
 		sb.append("\nBlack:\t").append(c_black);
 		System.out.println(sb.toString());
 	}
 
-	private static void runStandard(int param) {
-		take_time = false;
-		System.out.print(param);
-		System.out.println(" spins in int Array");
-		new Roulette(param).getResultsArr();
+	/**
+	 * Brukes for å starte opp.
+	 * 
+	 * @param param
+	 */
+	private void runStandard() {
+		System.out.print(this.SPIN_COUNT);
+		System.out.println();
+//		System.out.println(" spins in int Array");
+		// getResultsArr(createSequencesArr());
+//		 getResultsMap(createSequencesMap());
+		getResultsLinkedList(createSequencesLinkedList());
+		;
 	}
 
 	public static void main(String[] args) {
 		int param = 10_000_000;
-		try {
-			if (args[0] != null){
-				param = Integer.parseInt(args[0]);
-				if(param < 100) throw new IllegalArgumentException("Too low number.");
-			}
-			if (args[1].equals("-o")) {
-				take_time = true;
-				Scanner sc = new Scanner(System.in);
-				System.out
-						.println("Choose collection for your benchmark:\n1: HashMap\n2: Array\n0: Quit");
-				while (sc.hasNext()) {
-					switch (sc.nextLine()) {
-					case "0":
-						System.out.println("Terminating. Goodbye!");
-						sc.close();
-						System.exit(0);
-						break;
-					case "1":
-						System.out.print(param);
-						System.out.println(" spins in HashMap");
-						new Roulette(param).getResultsMap();
-						break;
-					case "2":
-						System.out.print(param);
-						System.out.println(" spins in Array");
-						new Roulette(param).getResultsArr();
-						break;
-					default:
-						System.out
-								.println("Wrong choice. Please try again (enter 0 to terminate)");
-						break;
-					}
-				}
-				sc.close();
-			}
-
-		} catch (ArrayIndexOutOfBoundsException e) {
-			// If started without parameters
-			runStandard(param);
-		} catch (NumberFormatException e) {
-			System.out
-					.println("Please pass an integer as first parameter.");
-		}
+		new Roulette(param);
 	}
 }
