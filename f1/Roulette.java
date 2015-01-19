@@ -1,13 +1,20 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 
 /**
- * Java versjon for Roulette shoutout.
+ * Java versjon for Roulette shootout.
+ * Uten parametre kjører den 10 000 000 spinn med array list.
+ * 
+ * Det er også mulig å spesifisere hvilken datatype som skal brukes:
+ * 1.	java Roulette 10000000 -a gir int[] array
+ * 2.	java Roulette 10000000 -h gir HashMap
+ * 3.	java Roulette 10000000 -a gir LinkedList
+ * 4.	java Roulette 10000000 -al gir ArrayList
  * 
  * @author Lukas Larsed, s198569@stud.hioa.no
- *
  */
 public class Roulette {
 
@@ -17,13 +24,47 @@ public class Roulette {
 	private int largest_seq_present = 0; // brukes for arrayversjon
 	private int c_red = 0, c_black = 0; // 0 = rød, 1 = sort
 
-	public Roulette(int spins) {
-		this.SPIN_COUNT = spins;
-		runStandard();
+	private enum DataT {
+		ARR("int[] Array"), HASHMAP("HashMap"), LINKEDLIST("LinkedList"), ARRLIST(
+				"ArrayList");
+		private final String datType;
+
+		private DataT(final String datType) {
+			this.datType = datType;
+		}
+
+		public String toString() {
+			return datType;
+		}
 	}
-	
+
+	public Roulette(int spins, String dt) {
+		this.SPIN_COUNT = spins;
+		switch (dt) {
+		case "-a":
+			message(DataT.ARR);
+			getResultsArr(createSequencesArr());
+			break;
+		case "-h":
+			message(DataT.HASHMAP);
+			getResultsMap(createSequencesMap());
+			break;
+		case "-l":
+			message(DataT.LINKEDLIST);
+			getResultsLinkedList(createSequencesLinkedList());
+			break;
+		case "-al":
+			message(DataT.ARRLIST);
+			getResultsArrayList(createSequencesArrayList());
+			break;
+		default:
+			throw new IllegalArgumentException(
+					"Oooops, something went wrong. Possible wrong argument?");
+		}
+	}
+
 	/**
-	 * Teller farge
+	 * Teller antall sorte eller røde utfall
 	 * 
 	 * @param numb
 	 */
@@ -47,6 +88,59 @@ public class Roulette {
 		return (int) (Math.random() * (max - min + 1) + min);
 	}
 
+	/**
+	 * ArrayList
+	 * 
+	 * @return
+	 */
+	private ArrayList<Integer> createSequencesArrayList() {
+		ArrayList<Integer> seq = new ArrayList<Integer>();
+		int rand = 0, rand_old = 0, index = 1;
+
+		for (int i = 1; i <= MAX_LENGTH; i++) {
+			seq.add(0);
+		}
+
+		for (int i = 1; i <= SPIN_COUNT; i++) {
+			if (i == 1) {
+				rand = getRandom(MIN, MAX);
+				rand_old = rand;
+			}
+			rand = getRandom(MIN, MAX);
+			if (rand == rand_old)
+				index++;
+			else {
+				try {
+					Integer current_index = seq.get(index);
+					seq.set(index, current_index + 1);
+				} catch (IndexOutOfBoundsException e) {
+					seq.add(index, 1);
+				}
+				index = 1;
+			}
+			countColor(rand);
+			rand_old = rand;
+		}
+		return seq;
+	}
+
+	private void getResultsArrayList(ArrayList<Integer> seq) {
+		while (seq.get(seq.size() - 1) == 0)
+			seq.remove(seq.size() - 1);
+		StringBuilder sb = new StringBuilder();
+		for (int i = 1; i < seq.size(); i++) {
+			sb.append(i).append(":\t").append(seq.get(i)).append("\n");
+		}
+		sb.append("\nRed:\t").append(c_red);
+		sb.append("\nBlack:\t").append(c_black);
+		System.out.println(sb.toString());
+	}
+
+	/**
+	 * LinkedList
+	 * 
+	 * @return
+	 */
 	private LinkedList<Integer> createSequencesLinkedList() {
 		LinkedList<Integer> seq = new LinkedList<Integer>();
 		int rand = 0, rand_old = 0, index = 1;
@@ -54,7 +148,7 @@ public class Roulette {
 		for (int i = 1; i <= MAX_LENGTH; i++) {
 			seq.add(0);
 		}
-		
+
 		for (int i = 1; i <= SPIN_COUNT; i++) {
 			if (i == 1) {
 				rand = getRandom(MIN, MAX);
@@ -69,7 +163,7 @@ public class Roulette {
 					seq.set(index, current_index + 1);
 				} catch (IndexOutOfBoundsException e) {
 					seq.set(index, 1);
-				} 
+				}
 				index = 1;
 			}
 			countColor(rand);
@@ -79,7 +173,8 @@ public class Roulette {
 	}
 
 	private void getResultsLinkedList(LinkedList<Integer> seq) {
-		while(seq.peekLast()==0) seq.removeLast();
+		while (seq.peekLast() == 0)
+			seq.removeLast();
 		StringBuilder sb = new StringBuilder();
 		int i = 1;
 		seq.removeFirst();
@@ -178,23 +273,37 @@ public class Roulette {
 		System.out.println(sb.toString());
 	}
 
-	/**
-	 * Brukes for å starte opp.
-	 * 
-	 * @param param
-	 */
-	private void runStandard() {
-		System.out.print(this.SPIN_COUNT);
-		System.out.println();
-//		System.out.println(" spins in int Array");
-		// getResultsArr(createSequencesArr());
-//		 getResultsMap(createSequencesMap());
-		getResultsLinkedList(createSequencesLinkedList());
-		;
+	private void message(DataT dt) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(SPIN_COUNT).append(" roulette spins sponsored by Java with ")
+				.append(dt).append("\n");
+		System.out.println(sb.toString());
 	}
 
 	public static void main(String[] args) {
-		int param = 10_000_000;
-		new Roulette(param);
+		final int param = 10_000_000;
+		final String param2 = "-a";
+		try {
+			final int param_a = Integer.parseInt(args[0]);
+			final String param2_a = args[1];
+			Thread thread = new Thread() {
+				public void run() {
+					new Roulette(param_a, param2_a);
+				}
+			};
+			thread.setPriority(Thread.MAX_PRIORITY);
+			thread.start();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			// Dersom startes uten parametre
+			Thread thread = new Thread() {
+				public void run() {
+					new Roulette(param, param2);
+				}
+			};
+			thread.setPriority(Thread.MAX_PRIORITY);
+			thread.start();
+		} catch (NumberFormatException e){
+			System.out.println("Første parametern skal altid være et tall.");
+		}
 	}
 }

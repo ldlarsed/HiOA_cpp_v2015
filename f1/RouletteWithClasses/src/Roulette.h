@@ -28,6 +28,7 @@ public:
 	virtual ~Roulette();
 
 	void showResults();
+	std::string hello();
 };
 
 #endif /* ROULETTE_H_ */

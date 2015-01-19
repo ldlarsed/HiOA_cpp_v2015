@@ -47,6 +47,11 @@ void Roulette::countColor(int numb) {
 		c_black++;
 }
 
+string Roulette::hello() {
+	string hello = "hello!";
+	return hello;
+}
+
 int Roulette::getRandom() {
 	return rand() % 2;
 }
@@ -64,7 +69,7 @@ void Roulette::createSequences() {
 			count++;
 		else {
 			seq[count]++;
-			if(count > largest_seq_present)
+			if (count > largest_seq_present)
 				largest_seq_present = count;
 			count = 1;
 		}
@@ -73,17 +78,18 @@ void Roulette::createSequences() {
 	}
 }
 
-void Roulette::showResults(){
+void Roulette::showResults() {
 	createSequences();
 	stringstream ss;
 
-	for(int i = 1; i <= largest_seq_present; i++){
+	for (int i = 1; i <= largest_seq_present; i++) {
 		ss << i << ":\t" << seq[i] << endl;
 	}
 	ss << endl;
 	ss << "Red:\t" << c_red << endl;
 	ss << "Black:\t" << c_black << endl;
 
-	cout << ss.str() << endl;;
+	cout << ss.str() << endl;
+	;
 
 }

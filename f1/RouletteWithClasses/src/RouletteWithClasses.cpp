@@ -32,7 +32,9 @@ int main(int argc, char *argv[]) {
 		{
 			showNumberSpins(10000000);
 			Roulette roulette;
+			cout << roulette.hello() << endl;
 			roulette.showResults();
+
 		}
 	}
 	return 0;
