@@ -45,6 +45,31 @@ void countOnLine() {
 	for (int i = 0; i < count; i++) {
 		if (isspace(words[i]))
 			teller++;
+		cout << (int) words[i] << " " << flush;
+	}
+
+	cout << "Antall tegn: " << count << endl;
+	cout << "Antall ord: " << teller << endl;
+
+}
+
+void countWithAscii() {
+
+	string tmp, all;
+	int teller = 1;
+
+	while (cin) {
+		getline(cin, tmp);
+		all += tmp;
+	}
+
+	vector<char> words(all.begin(), all.end());
+	int count = words.size();
+
+	for (int i = 0; i < count; i++) {
+		if ((int) words[i] == 32)
+			teller++;
+//		cout << (int) words[i] << " " << flush;
 	}
 
 	cout << "Antall tegn: " << count << endl;
@@ -54,7 +79,8 @@ void countOnLine() {
 
 int main() {
 
-	countOnLine();
+//	countOnLine();
+	countWithAscii();
 
 	return 0;
 }
