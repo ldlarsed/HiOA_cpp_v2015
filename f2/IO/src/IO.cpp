@@ -53,6 +53,23 @@ void countOnLine() {
 
 }
 
+/**
+ * Ikke testet ennå
+ */
+void countInLine2() {
+
+	int count = 0;
+
+	while (cin) {
+		int tmp = (int) cin.get();
+		if (tmp == 32)
+			count++;
+	}
+
+	cout << "Number of words: " << count << endl;
+
+}
+
 void countWithAscii() {
 
 	string tmp, all;
