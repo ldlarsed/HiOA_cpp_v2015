@@ -81,3 +81,7 @@ hs_err_pid*
 
 #KDE
 *.directory
+
+#KDevelop
+*.kdev4
+.kdev4/
