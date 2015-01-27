@@ -54,7 +54,7 @@ void countOnLine() {
 }
 
 /**
- * Ikke testet ennå
+ * Ikke testet ennå her har jeg tenkt at man skal bruke cin.get() for å lese en og en tegn
  */
 void countInLine2() {
 
