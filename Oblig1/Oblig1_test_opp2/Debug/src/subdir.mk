@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Card.cpp \
+../src/CardDeck.cpp \
 ../src/Oblig1_test_opp2.cpp 
 
 OBJS += \
 ./src/Card.o \
+./src/CardDeck.o \
 ./src/Oblig1_test_opp2.o 
 
 CPP_DEPS += \
 ./src/Card.d \
+./src/CardDeck.d \
 ./src/Oblig1_test_opp2.d 
 
 

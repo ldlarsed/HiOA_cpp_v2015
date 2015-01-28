@@ -9,22 +9,27 @@
 #define CARD_H_
 #include <string>
 #include "Suit.h"
+#include "CardType.h"
 
 class Card {
+
+
+
 public:
 
-	Card(Suit suit, int value);
+	Card(Suit suit, CardType c_type);
 	virtual ~Card();
 
 	Suit getSuit();
-	int getValue();
+	CardType getCardType();
 
 	std::string getSuitString();
-	std::string getValueString();
+	std::string getCardTypeString();
+	std::string getFullCardName();
 
 private:
 	Suit suit;
-	int value;
+	CardType c_type;
 };
 
 #endif /* CARD_H_ */
