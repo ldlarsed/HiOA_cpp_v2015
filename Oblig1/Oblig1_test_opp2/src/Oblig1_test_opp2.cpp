@@ -18,8 +18,9 @@ int main() {
 //	cout << card1.getSuitString() << card1.getCardTypeString() << endl;
 //	cout << card1.getFullCardName() << endl;
 	CardDeck deck1;
+//	deck1.printDeck();
+	deck1.shuffle();
 	deck1.printDeck();
-
 
 	return 0;
 }

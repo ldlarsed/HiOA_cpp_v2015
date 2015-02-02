@@ -6,17 +6,20 @@
 CPP_SRCS += \
 ../src/Card.cpp \
 ../src/CardDeck.cpp \
-../src/Oblig1_test_opp2.cpp 
+../src/Oblig1_test_opp2.cpp \
+../src/Test.cpp 
 
 OBJS += \
 ./src/Card.o \
 ./src/CardDeck.o \
-./src/Oblig1_test_opp2.o 
+./src/Oblig1_test_opp2.o \
+./src/Test.o 
 
 CPP_DEPS += \
 ./src/Card.d \
 ./src/CardDeck.d \
-./src/Oblig1_test_opp2.d 
+./src/Oblig1_test_opp2.d \
+./src/Test.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
