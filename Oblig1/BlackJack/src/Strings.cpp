@@ -1,0 +1,13 @@
+/*
+ * Strings.cpp
+ *
+ *  Created on: Feb 3, 2015
+ *      Author: luke
+ */
+
+#include "Strings.h"
+
+using namespace std;
+
+char* strings::GREATINGS = "Welcome to the BlackJack";
+char* strings::USERNAME = "Enter your name";

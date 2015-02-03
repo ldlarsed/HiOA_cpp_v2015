@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2015-02-03T01:15:39" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
+<XMI verified="false" xmi.version="1.2" timestamp="2015-02-03T09:42:02" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
@@ -287,7 +287,7 @@
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams>
-       <diagram showopsig="1" linecolor="#ff0000" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="1" showstereotype="1" name="class diagram" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" canvasheight="721" canvaswidth="1331" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff00" zoom="86" xmi.id="LmWRpNaY0AxB" documentation="sdfsdffsdsdfsggd" showscope="1" snapgrid="0" showatts="1" type="1">
+       <diagram showopsig="1" linecolor="#ff0000" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="1" showstereotype="1" name="class diagram" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" canvasheight="1306.090909090909" canvaswidth="1244" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff00" zoom="100" xmi.id="LmWRpNaY0AxB" documentation="sdfsdffsdsdfsggd" showscope="1" snapgrid="0" showatts="1" type="1">
         <widgets>
          <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-1510" showattsigs="601" showstereotype="1" y="-970" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="POfxijKFLJCW" width="245" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="DpUpE55oc1hd" showscope="1" height="127" showopsigs="601"/>
          <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-1178" showattsigs="601" showstereotype="1" y="-944" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="QPOgIlDzeWhn" width="185" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="hCPl9FTY6s1y" showscope="1" height="105" showopsigs="601"/>
@@ -303,10 +303,10 @@
          <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-884" showattsigs="601" showstereotype="1" y="-553" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="POZZ0DBe1fWs" width="115" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="xphHvROA5pHo" showscope="1" height="37" showopsigs="601"/>
          <boxwidget width="299" showstereotype="1" x="-1536" usesdiagramusefillcolor="0" y="-1192" usesdiagramfillcolor="0" isinstance="0" localid="sTB6WoVTeAjZ" fillcolor="#ffff00" height="382" linecolor="#000000" xmi.id="Z7hduwRKKzrK" textcolor="#000000" usefillcolor="1" linewidth="0" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0"/>
          <floatingtext linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-1424" showstereotype="1" y="-1217" text="Card Entity" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="C2wCfQ2WsDcM" pretext="" role="700" width="78" isinstance="0" posttext="" usefillcolor="1" fillcolor="#ffff00" xmi.id="25oeDXBmcsPX" height="19"/>
-         <enumwidget width="101" showstereotype="1" x="-1551" usesdiagramusefillcolor="0" y="-616" usesdiagramfillcolor="0" isinstance="0" localid="zkb0GYpPM5cs" fillcolor="#ffff00" height="120" linecolor="none" xmi.id="Awxex8jHqk7T" showpackage="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0"/>
-         <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-735" showattsigs="601" showstereotype="1" y="-715" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="QAzqzmE31hAi" width="58" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="DG8KGbkxEkSY" showscope="1" height="29" showopsigs="601"/>
+         <enumwidget width="103" showstereotype="1" x="-1551" usesdiagramusefillcolor="0" y="-616" usesdiagramfillcolor="0" isinstance="0" localid="zkb0GYpPM5cs" fillcolor="#ffff00" height="120" linecolor="none" xmi.id="Awxex8jHqk7T" showpackage="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0"/>
+         <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-735" showattsigs="601" showstereotype="1" y="-715" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="QAzqzmE31hAi" width="59" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="DG8KGbkxEkSY" showscope="1" height="29" showopsigs="601"/>
          <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-633" showattsigs="601" showstereotype="1" y="-868" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="d4xroNOCXL0W" width="204" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="tC0HpVt0j2Kz" showscope="1" height="52" showopsigs="601"/>
-         <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-387" showattsigs="601" showstereotype="1" y="-982" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="mLtIw0zFau1p" width="70" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="IEbwO1L7FmiL" showscope="1" height="29" showopsigs="601"/>
+         <classwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="0" showpubliconly="1" showpackage="1" x="-387" showattsigs="601" showstereotype="1" y="-982" showattributes="1" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="mLtIw0zFau1p" width="71" isinstance="0" usefillcolor="1" fillcolor="#ffff00" xmi.id="IEbwO1L7FmiL" showscope="1" height="29" showopsigs="601"/>
         </widgets>
         <messages/>
         <associations>
@@ -363,7 +363,7 @@
            <startpoint startx="-884" starty="-549"/>
            <endpoint endx="-996" endy="-549"/>
           </linepath>
-          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" x="-994" showstereotype="1" y="-547,5" text="h_input" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="3rqMAvGlbKcT" pretext="-" role="710" width="60" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="jlz5AvQEjGB8" height="19"/>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" x="-994" showstereotype="1" y="0" text="h_input" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="3rqMAvGlbKcT" pretext="-" role="710" width="60" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="jlz5AvQEjGB8" height="19"/>
          </assocwidget>
          <assocwidget linecolor="none" indexa="1" usesdiagramfillcolor="0" widgetbid="FeQ7lc9l9egc" indexb="1" linewidth="none" seqnum="" textcolor="none" usesdiagramusefillcolor="0" totalcounta="2" totalcountb="2" widgetaid="08K2ocQp6PnS" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#ffff00" changeabilityA="900" xmi.id="gTqGuAOIj5XP" changeabilityB="900" type="510">
           <linepath layout="Polyline">
@@ -374,10 +374,10 @@
          </assocwidget>
          <assocwidget linecolor="none" indexa="1" usesdiagramfillcolor="0" widgetbid="QsrcUtxsZWfO" indexb="1" linewidth="none" seqnum="" textcolor="none" usesdiagramusefillcolor="0" totalcounta="2" totalcountb="2" widgetaid="08K2ocQp6PnS" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#ffff00" changeabilityA="900" xmi.id="s5Gc9lznU3A7" changeabilityB="900" type="510">
           <linepath layout="Polyline">
-           <startpoint startx="-1097" starty="-718,5"/>
-           <endpoint endx="-1233" endy="-718,5"/>
+           <startpoint startx="-1097" starty="-705"/>
+           <endpoint endx="-1233" endy="-705"/>
           </linepath>
-          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" x="-1231" showstereotype="1" y="-716,5" text="sc" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="Jk0qdFcA1Wwo" pretext="-" role="710" width="27" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="BoIFYzBO3RyC" height="19"/>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" x="-1212.5" showstereotype="1" y="-681.5" text="sc" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="Jk0qdFcA1Wwo" pretext="-" role="710" width="27" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="BoIFYzBO3RyC" height="19"/>
          </assocwidget>
          <assocwidget indexa="1" indexb="1" usesdiagramusefillcolor="0" widgetaid="DG8KGbkxEkSY" usesdiagramfillcolor="0" fillcolor="#ffff00" linecolor="#ff0000" seqnum="" totalcounta="2" xmi.id="Pmwgqox3KNSm" widgetbid="vEAEafLYYHep" totalcountb="2" type="500" textcolor="#000000" usefillcolor="1" linewidth="0" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0">
           <linepath layout="Polyline">
@@ -391,20 +391,20 @@
            <endpoint endx="-609" endy="-972"/>
           </linepath>
          </assocwidget>
-         <assocwidget linecolor="none" indexa="1" usesdiagramfillcolor="0" widgetbid="bFOlNeUlhUYZ" indexb="1" linewidth="none" seqnum="" textcolor="none" usesdiagramusefillcolor="192" totalcounta="2" totalcountb="2" widgetaid="DG8KGbkxEkSY" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#ffff00" changeabilityA="900" xmi.id="cEEs36FZKobI" changeabilityB="900" type="510">
+         <assocwidget linecolor="none" indexa="1" usesdiagramfillcolor="0" widgetbid="bFOlNeUlhUYZ" indexb="1" linewidth="none" seqnum="" textcolor="none" usesdiagramusefillcolor="1" totalcounta="2" totalcountb="2" widgetaid="DG8KGbkxEkSY" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#ffff00" changeabilityA="900" xmi.id="cEEs36FZKobI" changeabilityB="900" type="510">
           <linepath layout="Polyline">
            <startpoint startx="-725" starty="-715"/>
            <endpoint endx="-725" endy="-806"/>
           </linepath>
           <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" x="-748" showstereotype="1" y="-804" text="pt" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" localid="wVqfqL7EhT5q" pretext="-" role="710" width="26" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="iRAddD0ESE6V" height="19"/>
          </assocwidget>
-         <assocwidget indexa="1" indexb="1" usesdiagramusefillcolor="96" widgetaid="IEbwO1L7FmiL" usesdiagramfillcolor="0" fillcolor="#ffff00" linecolor="none" seqnum="" totalcounta="2" xmi.id="lXt5eQbvdAr1" widgetbid="vEAEafLYYHep" totalcountb="2" type="500" textcolor="none" usefillcolor="1" linewidth="none" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0">
+         <assocwidget indexa="1" indexb="1" usesdiagramusefillcolor="1" widgetaid="IEbwO1L7FmiL" usesdiagramfillcolor="0" fillcolor="#ffff00" linecolor="none" seqnum="" totalcounta="2" xmi.id="lXt5eQbvdAr1" widgetbid="vEAEafLYYHep" totalcountb="2" type="500" textcolor="none" usefillcolor="1" linewidth="none" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0">
           <linepath layout="Polyline">
            <startpoint startx="-387" starty="-972"/>
            <endpoint endx="-495" endy="-972"/>
           </linepath>
          </assocwidget>
-         <assocwidget linecolor="none" indexa="1" usesdiagramfillcolor="0" widgetbid="DG8KGbkxEkSY" indexb="1" linewidth="none" seqnum="" textcolor="none" usesdiagramusefillcolor="33" totalcounta="2" totalcountb="2" widgetaid="08K2ocQp6PnS" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#ffff00" changeabilityA="900" xmi.id="IGNtRCvcN21J" changeabilityB="900" type="510">
+         <assocwidget linecolor="none" indexa="1" usesdiagramfillcolor="0" widgetbid="DG8KGbkxEkSY" indexb="1" linewidth="none" seqnum="" textcolor="none" usesdiagramusefillcolor="1" totalcounta="2" totalcountb="2" widgetaid="08K2ocQp6PnS" font="Oxygen-Sans,10,-1,5,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#ffff00" changeabilityA="900" xmi.id="IGNtRCvcN21J" changeabilityB="900" type="510">
           <linepath layout="Polyline">
            <startpoint startx="-873" starty="-705"/>
            <endpoint endx="-735" endy="-705"/>
