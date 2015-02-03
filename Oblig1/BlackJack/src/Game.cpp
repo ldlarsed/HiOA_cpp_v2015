@@ -1,6 +1,8 @@
 #include "Game.h"
 
-Game::Game(int number_of_players) {
+using namespace std;
+
+Game::Game(vector<HPlayer> h_players) {
 }
 
 Game::~Game() {

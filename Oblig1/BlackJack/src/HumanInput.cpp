@@ -7,18 +7,19 @@
 using namespace std;
 
 HumanInput::HumanInput() {
+	ClearScreen();
 	cout << strings::GREATINGS << endl;
 }
 
 HumanInput::~HumanInput() {
 }
 
-string HumanInput::getSingleInputString() {
+string HumanInput::getSingleInputString(string message) {
 
 	string input_str;
-
+	while (cin == NULL)
+		wait();
 	getline(cin, input_str);
-	cout << input_str << endl;
 
 	return input_str;
 }
@@ -36,7 +37,27 @@ int HumanInput::getNumberOfPlayers() {
 	cout << strings::NUMBER_OF_PLAYERS << endl;
 	input = getSingleInputChar();
 	cout << "Starting game for " << input << " players" << endl;
-	return (int) input;
+	return atoi(&input);
+}
+
+vector<string> HumanInput::getPlayerNames(int number_of_players) {
+	vector<string> p_names;
+
+	for (int i = 0; i < number_of_players; i++) {
+		string msg = strings::PLAYERNAME;
+		cout << msg << i + 1 << endl;
+		string fdbck;
+		do {
+			fdbck = getSingleInputString(msg);
+			wait();
+		} while (i < number_of_players && fdbck.empty());
+		p_names.push_back(fdbck);
+	}
+	return p_names;
+}
+
+void HumanInput::ClearScreen() {
+	cout << string(100, '\n');
 }
 
 //Eksempel på hvordan man kan lese hele strenger fra input fra bruker for å lese hele strenger

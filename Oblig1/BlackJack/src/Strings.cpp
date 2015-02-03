@@ -10,5 +10,5 @@
 using namespace std;
 
 char* strings::GREATINGS = "Welcome to the BlackJack";
-char* strings::USERNAME = "Enter your name";
+char* strings::PLAYERNAME = "Name player ";
 char* strings::NUMBER_OF_PLAYERS = "How many players?";

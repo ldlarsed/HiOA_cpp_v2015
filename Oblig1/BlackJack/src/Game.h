@@ -17,7 +17,7 @@ class Game {
 
 public:
 
-	Game(int number_of_players);
+	Game(std::vector<HPlayer> h_players);
 	virtual ~Game();
 
 	AiPlayer ai1;

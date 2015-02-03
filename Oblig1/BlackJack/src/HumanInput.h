@@ -2,6 +2,7 @@
 #define HUMANINPUT_H
 
 #include <string>
+#include <vector>
 #include "PlayerAction.h"
 #include "Player.h"
 
@@ -16,13 +17,15 @@ public:
 	virtual ~HumanInput();
 
 	int getNumberOfPlayers();
-	void getNames(int number_of_players);
+	std::vector<std::string> getPlayerNames(int number_of_players); //Promts for all player names.
 	int requestBet(Player p);
-	std::string getSingleInputString(); //Retrieves a string and exits on enter
+	std::string getSingleInputString(std::string message); //Retrieves a string and exits on enter
 	char getSingleInputChar(); //Retrieves one char input from user
 
 private:
 	char input;
+
+	void ClearScreen();
 };
 
 #endif // HUMANINPUT_H
