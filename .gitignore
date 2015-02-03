@@ -85,3 +85,6 @@ hs_err_pid*
 #KDevelop
 *.kdev4
 .kdev4/
+
+#Eget
+*.d
