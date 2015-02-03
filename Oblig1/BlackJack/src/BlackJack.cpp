@@ -23,13 +23,18 @@ int main() {
 	deck1.shuffle();
 //	deck1.printDeck();
 
-	cout << endl;
-	cout << deck1.getCard().getFullCardName() << endl;
-	cout << deck1.getCard().getFullCardName() << endl;
+//	cout << endl;
+//	cout << deck1.getCard().getFullCardName() << endl;
+//	cout << deck1.getCard().getFullCardName() << endl;
 
 	HumanInput hi;
-	hi.getInputChar('q');
+//	hi.getInputChar('q');
+//	hi.getNumberOfPlayers();
+	string test = hi.getSingleInputString();
+	cout << "String received" << test << endl;
 
+	//The only thing we have to do in this class is to get the number of players
+	//The this parameter can be send to the Game() class and initiate game.
 
 
 	return 0;

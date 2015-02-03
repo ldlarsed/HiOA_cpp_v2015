@@ -13,6 +13,7 @@
 namespace strings {
 	extern char* GREATINGS;
 	extern char* USERNAME;
+	extern char* NUMBER_OF_PLAYERS;
 
 }
 

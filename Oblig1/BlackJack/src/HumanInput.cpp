@@ -1,5 +1,6 @@
 #include <iostream>
-//#include <string>
+#include <string>
+#include <sstream>
 #include "HumanInput.h"
 #include "Strings.h"
 
@@ -12,20 +13,30 @@ HumanInput::HumanInput() {
 HumanInput::~HumanInput() {
 }
 
-char HumanInput::getInputChar(char requested) {
+string HumanInput::getSingleInputString() {
 
-	char input;
+	string input_str;
+
+	getline(cin, input_str);
+	cout << input_str << endl;
+
+	return input_str;
+}
+
+char HumanInput::getSingleInputChar() {
 
 	do {
 		input = cin.get();
-		cout << input << endl;
-	} while (input != requested);
+	} while (!input);
 
 	return input;
 }
 
-void HumanInput::getNumberOfPlayers(){
-
+int HumanInput::getNumberOfPlayers() {
+	cout << strings::NUMBER_OF_PLAYERS << endl;
+	input = getSingleInputChar();
+	cout << "Starting game for " << input << " players" << endl;
+	return (int) input;
 }
 
 //Eksempel på hvordan man kan lese hele strenger fra input fra bruker for å lese hele strenger
@@ -33,3 +44,8 @@ void HumanInput::getNumberOfPlayers(){
 //		getline(cin, input);
 //		cout << input << endl;
 //	}
+
+//	do {
+//		input = cin.get();
+//		cout << input << endl;
+//	} while (input != requested);

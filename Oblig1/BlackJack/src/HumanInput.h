@@ -15,13 +15,14 @@ public:
 
 	virtual ~HumanInput();
 
-	void getNumberOfPlayers();
+	int getNumberOfPlayers();
 	void getNames(int number_of_players);
 	int requestBet(Player p);
-	char getInputChar(char requested);
+	std::string getSingleInputString(); //Retrieves a string and exits on enter
+	char getSingleInputChar(); //Retrieves one char input from user
 
 private:
-
+	char input;
 };
 
 #endif // HUMANINPUT_H

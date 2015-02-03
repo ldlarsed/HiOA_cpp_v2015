@@ -40,7 +40,7 @@ void CardDeck::shuffle() {
 		} while (i < NUMBER_OF_CARDS && exists[r]);
 		exists[r] = true;
 		positions[i] = r;
-		cout << positions[i] << ", ";
+//		cout << positions[i] << ", ";
 	}
 
 	for(int i=0; i< NUMBER_OF_CARDS; i++){
