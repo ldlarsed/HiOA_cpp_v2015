@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef CARD_H_
-#define CARD_H_
+#ifndef BLACKJACK_SRC_CARD_H_
+#define BLACKJACK_SRC_CARD_H_
 #include <string>
 #include "Suit.h"
 #include "CardType.h"
@@ -32,4 +32,4 @@ private:
 	CardType c_type;
 };
 
-#endif /* CARD_H_ */
+#endif /* BLACKJACK_SRC_CARD_H_ */

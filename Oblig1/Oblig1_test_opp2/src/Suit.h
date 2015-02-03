@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef SUIT_H_
-#define SUIT_H_
+#ifndef BLACKJACK_SRC_SUIT_H_
+#define BLACKJACK_SRC_SUIT_H_
 
 
 
@@ -17,4 +17,4 @@ enum class Suit {
 static const Suit SuitsArr[] =
 		{ Suit::CLUB, Suit::DIAMOND, Suit::HEART, Suit::SPADE };
 
-#endif /* SUIT_H_ */
+#endif /* BLACKJACK_SRC_SUIT_H_ */

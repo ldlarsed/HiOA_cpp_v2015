@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef TEST_H_
-#define TEST_H_
+#ifndef BLACKJACK_SRC_TEST_H_
+#define BLACKJACK_SRC_TEST_H_
 #include <iostream>
 #include <algorithm>
 
@@ -18,4 +18,4 @@ public:
 	void sortAndPrintArray(int size, int arr[]);
 };
 
-#endif /* TEST_H_ */
+#endif /* BLACKJACK_SRC_TEST_H_ */

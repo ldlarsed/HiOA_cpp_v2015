@@ -52,7 +52,15 @@ void CardDeck::shuffle() {
 	for(int i = 0; i< NUMBER_OF_CARDS; i++){
 		deck.push_back(tmp_card[positions[i]]);
 	}
+}
 
+/**
+ * Offers a card last in the deck and deletes this card from the deck
+ */
+Card CardDeck::getCard(){
+	Card card = deck.back();
+	deck.erase(deck.end());
+	return card;
 
 }
 

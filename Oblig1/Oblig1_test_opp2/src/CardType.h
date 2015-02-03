@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef CARDTYPE_H_
-#define CARDTYPE_H_
+#ifndef BLACKJACK_SRC_CARDTYPE_H_
+#define BLACKJACK_SRC_CARDTYPE_H_
 
 enum class CardType {
 	Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
@@ -18,4 +18,4 @@ static const CardType CardTypeArr[] = { CardType::Two, CardType::Three,
 		CardType::Eight, CardType::Nine, CardType::Ten, CardType::Jack,
 		CardType::Queen, CardType::King, CardType::Ace };
 
-#endif /* CARDTYPE_H_ */
+#endif /* BLACKJACK_SRC_CARDTYPE_H_ */

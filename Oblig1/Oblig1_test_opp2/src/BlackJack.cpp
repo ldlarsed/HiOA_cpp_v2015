@@ -20,7 +20,10 @@ int main() {
 	CardDeck deck1;
 //	deck1.printDeck();
 	deck1.shuffle();
-	deck1.printDeck();
+//	deck1.printDeck();
 
+	cout << endl;
+	cout << deck1.getCard().getFullCardName() << endl;
+	cout << deck1.getCard().getFullCardName() << endl;
 	return 0;
 }

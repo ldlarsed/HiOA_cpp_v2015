@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef CARDDECK_H_
-#define CARDDECK_H_
+#ifndef BLACKJACK_SRC_CARDDECK_H_
+#define BLACKJACK_SRC_CARDDECK_H_
 #include <iostream>
 #include <vector>
 #include <deque>
@@ -23,6 +23,7 @@ public:
 
 	void shuffle();
 	void printDeck();
+	Card getCard();
 
 private:
 	std::vector<Card> tmp_card;
@@ -32,4 +33,4 @@ private:
 
 };
 
-#endif /* CARDDECK_H_ */
+#endif /* BLACKJACK_SRC_CARDDECK_H_ */
