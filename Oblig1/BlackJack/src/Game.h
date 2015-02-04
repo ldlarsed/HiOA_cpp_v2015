@@ -2,27 +2,35 @@
 #define GAME_H
 
 #include <vector>
+#include <sstream>
 #include "CardDeck.h"
-#include "HumanInput.h"
 #include "ScoreCalc.h"
 #include "HPlayer.h"
-//#include "Bank.h"
+#include "Bank.h"
+#include "HumanIO.h"
+#include "Strings.h"
 
 class Game {
 
 public:
-//	Game();
-	Game(std::vector<HPlayer> h_players){
+	Game();
+	Game(std::vector<HPlayer> h_players) {
 		this->h_players = h_players;
 	};
 	virtual ~Game();
 
+	void initilizeNewGame(); //Mostly used to testing prints out names of players participating in the game
+	void runGame();
 
 private:
+	void placeBets();
+
+private:
+	Bank bank;
 	CardDeck card_deck;
 	std::vector<HPlayer> h_players;
-	HumanInput h_input;
+	HumanIO h_io;
 	ScoreCalc sc;
-//	Bank bank;
+
 };
 #endif // GAME_H

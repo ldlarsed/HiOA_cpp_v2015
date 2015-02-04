@@ -17,7 +17,9 @@ public:
 	Player(int cash, PlayerType player_type, std::string player_name):
 		cash(cash), player_type(player_type), player_name(player_name)
 	{
-		this->score = 0;
+		this->hand_score = 0;
+		this->hand_bet = 0;
+		this->previous_bet = 0;
 	};
 	virtual ~Player();
 
@@ -27,14 +29,22 @@ public:
 	int getScore();
 	void updateScore(int score);
 	PlayerType getPlayerType();
+	void setBet(int bet);
+	void increaseBet(int additional_bet);
+	void reBet(); //If user wants to use the same amount as in previous bet
+	void resetBet();
+	int getBet();
+	std::string getPlayerName();
 
 private:
-	int score;
+	int hand_score;
+	int hand_bet;
+	int previous_bet;
 	int cash;
 	PlayerType player_type;
 	std::string player_name;
 	static void incrementPlayerID(){
-		Player::player_id++;
+		++Player::player_id;
 	};
 
 };

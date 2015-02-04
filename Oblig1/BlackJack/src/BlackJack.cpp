@@ -11,17 +11,17 @@
 #include <string>
 #include "Card.h"
 #include "CardDeck.h"
-#include "HumanInput.h"
 #include "Strings.h"
 #include "PlayerType.h"
 #include "HPlayer.h"
 #include "Game.h"
+#include "HumanIO.h"
 
 using namespace std;
 
 int main() {
 
-	HumanInput hi;
+	HumanIO hi;
 
 	//Starts the application
 	int number_of_players = hi.getNumberOfPlayers();
@@ -39,7 +39,8 @@ int main() {
 
 	//Starts a BlackJack game
 	Game *g = new Game(h_players);
-
+	g->initilizeNewGame();
+	g->runGame();
 
 
 

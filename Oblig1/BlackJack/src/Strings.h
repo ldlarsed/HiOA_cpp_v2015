@@ -11,9 +11,12 @@
 #include <string>
 
 namespace strings {
-	extern char* GREATINGS;
-	extern char* PLAYERNAME;
-	extern char* NUMBER_OF_PLAYERS;
+	extern char const * GREATINGS;
+	extern char const * PLAYERNAME;
+	extern char const * NUMBER_OF_PLAYERS;
+	extern char const * PLACE_YOUR_BETS;
+	extern char const * BET_CHOICES;
+	extern char const * WELCOME_PLAYERS;
 
 }
 

@@ -12,9 +12,11 @@
 
 class Bank: public Player {
 public:
-	Bank();
+//	Bank();
+	Bank():Player(500, PlayerType::Dealer, "Dealer"){};
 
 	virtual ~Bank();
+
 };
 
 #endif /* BANK_H_ */

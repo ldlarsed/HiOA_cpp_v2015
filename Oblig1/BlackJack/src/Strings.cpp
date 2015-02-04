@@ -9,6 +9,9 @@
 
 using namespace std;
 
-char* strings::GREATINGS = "Welcome to the BlackJack";
-char* strings::PLAYERNAME = "Name player ";
-char* strings::NUMBER_OF_PLAYERS = "How many players?";
+char const * strings::GREATINGS = "Welcome to the BlackJack";
+char const * strings::PLAYERNAME = "Name player ";
+char const * strings::NUMBER_OF_PLAYERS = "How many players?";
+char const * strings::PLACE_YOUR_BETS = "Place your bets";
+char const * strings::BET_CHOICES = "1) 10 \t 2) 20 \t 3) 50";
+char const * strings::WELCOME_PLAYERS = "Welcome to the game: ";

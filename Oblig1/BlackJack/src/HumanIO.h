@@ -5,27 +5,30 @@
 #include <vector>
 #include "PlayerAction.h"
 #include "Player.h"
+#include "HPlayer.h"
 
 /**
  * Gets inputs and communicates with one or more human players.
  */
 
-class HumanInput {
+class HumanIO {
 public:
-	HumanInput();
+	HumanIO();
 
-	virtual ~HumanInput();
+	virtual ~HumanIO();
 
 	int getNumberOfPlayers();
 	std::vector<std::string> getPlayerNames(int number_of_players); //Promts for all player names.
-	int requestBet(Player p);
 	std::string getSingleInputString(std::string message); //Retrieves a string and exits on enter
 	char getSingleInputChar(); //Retrieves one char input from user
+	int getSingleInputInt(); //Retrieves one char input from user
 	void showCreatedPlayers(std::vector<std::string>& p_names);
+	void placeBets(std::vector<HPlayer>* h_players);
+	void message(std::string message, bool new_line);
+	void showPlayerNames(std::vector<HPlayer>& h_players);
 
 private:
 	char input;
-
 	void ClearScreen();
 };
 
