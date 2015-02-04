@@ -13,6 +13,7 @@
 class Bank: public Player {
 public:
 	Bank();
+
 	virtual ~Bank();
 };
 

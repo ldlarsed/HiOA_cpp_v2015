@@ -13,11 +13,13 @@
 #include "CardDeck.h"
 #include "HumanInput.h"
 #include "Strings.h"
+#include "PlayerType.h"
+#include "HPlayer.h"
+#include "Game.h"
 
 using namespace std;
 
 int main() {
-
 
 	HumanInput hi;
 
@@ -25,10 +27,19 @@ int main() {
 	int number_of_players = hi.getNumberOfPlayers();
 	vector<string> p_names = hi.getPlayerNames(number_of_players);
 
-	cout << flush;
-	cout << "Players in game: " << endl;
-	for(int i = 0; i < p_names.size();i++)
-		cout << "Player " << i+1 << " "<< p_names[i] << endl;
+	//Show players that are joining the game
+	hi.showCreatedPlayers(p_names);
+
+
+	//Create appropriate human player objects and start the game class
+	vector<HPlayer> h_players;
+	for(int i = 0; i < number_of_players; i++){
+		h_players.push_back(HPlayer(500, PlayerType::Human, p_names[i]));
+	}
+
+	//Starts a BlackJack game
+	Game *g = new Game(h_players);
+
 
 
 

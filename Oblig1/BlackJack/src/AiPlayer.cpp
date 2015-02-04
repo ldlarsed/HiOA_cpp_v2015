@@ -2,8 +2,5 @@
 
 
 
-AiPlayer::AiPlayer(){
-
-};
 
 AiPlayer::~AiPlayer() { };

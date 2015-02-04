@@ -60,6 +60,12 @@ void HumanInput::ClearScreen() {
 	cout << string(100, '\n');
 }
 
+void HumanInput::showCreatedPlayers(vector<string>& p_names) {
+	cout << flush;
+	cout << "Players in game: " << endl;
+	for (unsigned int i = 0; i < p_names.size(); i++)
+		cout << "Player " << i + 1 << " " << p_names[i] << endl;
+}
 //Eksempel på hvordan man kan lese hele strenger fra input fra bruker for å lese hele strenger
 //	while(true){
 //		getline(cin, input);

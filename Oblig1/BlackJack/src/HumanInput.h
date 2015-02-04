@@ -21,6 +21,7 @@ public:
 	int requestBet(Player p);
 	std::string getSingleInputString(std::string message); //Retrieves a string and exits on enter
 	char getSingleInputChar(); //Retrieves one char input from user
+	void showCreatedPlayers(std::vector<std::string>& p_names);
 
 private:
 	char input;
