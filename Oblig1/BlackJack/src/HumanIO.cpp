@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <deque>
 
 #include "HumanIO.h"
 #include "Strings.h"
@@ -88,13 +89,13 @@ void HumanIO::placeBets(vector<HPlayer>* h_players) {
 
 	for (unsigned int i = 0; i < h_players->size(); i++) {
 		cout << h_players->at(i).getPlayerName() << endl;
-		bet = getSingleInputInt();
-		cout << "Setting bet " << bet << endl;
+		bet = BetSize::getBetAmount(getSingleInputInt());
+		cout << "Setting bet $" << bet << endl;
 		h_players->at(i).setBet(bet);
 		bet = 0;
 	}
 	for (unsigned int i = 0; i < h_players->size(); i++) {
-		cout << h_players->at(i).getPlayerName() << ": "
+		cout << h_players->at(i).getPlayerName() << " bets $"
 				<< h_players->at(i).getBet() << endl;
 	}
 }
@@ -106,11 +107,22 @@ void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
 	cout << endl << endl;
 }
 
+/**
+ * Prints out the dealed cards for every player
+ */
 void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
 	stringstream ss;
 	for (unsigned int i = 0; i < h_players.size(); i++) {
-		ss << h_players[i].removeLastCard().getFullCardName() << endl;
+
+		ss << h_players[i].getPlayerName() << ": ";
+
+		for(int j = 0; j < h_players[i].getHandSize(); j++){
+			ss << h_players[i].showHandCardAt(j).getFullCardName() << ", ";
+		}
+		ss << h_players[i].getHandScore();
+		ss << endl;
 	}
+	ss << bank.getPlayerName() << ": ";
 	ss << bank.removeLastCard().getFullCardName() << endl;
 
 	cout << ss.str() << endl;

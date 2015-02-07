@@ -4,7 +4,6 @@
 #include <vector>
 #include <sstream>
 #include "CardDeck.h"
-#include "ScoreCalc.h"
 #include "HPlayer.h"
 #include "Bank.h"
 #include "HumanIO.h"
@@ -33,7 +32,6 @@ private:
 	CardDeck card_deck;
 	std::vector<HPlayer> h_players;
 	HumanIO h_io;
-	ScoreCalc sc;
 
 };
 #endif // GAME_H

@@ -60,7 +60,7 @@ Card Player::removeLastCard() {
 /**
  * Shows the size of user hand
  */
-int Player::playerHandSize() {
+int Player::getHandSize() {
 	return player_hand.size();
 }
 
@@ -68,6 +68,7 @@ int Player::playerHandSize() {
  * Returns the score of actual player hand.
  */
 int Player::getHandScore(){
+	calculateScoreForHand();
 	return hand_score;
 }
 
@@ -76,4 +77,21 @@ int Player::getHandScore(){
  */
 deque<Card>& Player::getPlayerHand(){
 	return this->player_hand;
+}
+
+/**
+ * Return card referance from actual user hand.
+ * Use with getHandSize to iterate.
+ */
+Card& Player::showHandCardAt(int i){
+	return player_hand.at(i);
+}
+
+/**
+ * Calculates score for the actual playeer hand.
+ */
+void Player::calculateScoreForHand(){
+	for(unsigned i = 0; i < player_hand.size(); i++){
+		this->hand_score += sc.requestValue(hand_score, player_hand[i]);
+	}
 }

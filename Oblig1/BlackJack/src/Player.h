@@ -5,6 +5,7 @@
 #include <deque>
 #include "PlayerType.h"
 #include "Card.h"
+#include "ScoreCalc.h"
 
 class Player {
 public:
@@ -42,10 +43,12 @@ public:
 
 	void giveCard(Card card);
 	Card removeLastCard();
-	int playerHandSize();
+	int getHandSize();
 	int getHandScore();
 	std::deque<Card>& getPlayerHand();
+	Card& showHandCardAt(int i);
 
+	void calculateScoreForHand();
 
 private:
 	int hand_score;
@@ -57,6 +60,7 @@ private:
 
 	std::deque<Card> player_hand; //Deque for the actual player hand
 	int hand_size;
+	ScoreCalc sc;
 
 	static void incrementPlayerID(){
 		++Player::player_id;

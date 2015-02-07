@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "HPlayer.h"
 #include "Bank.h"
+#include "BetSize.h"
 
 /**
  * Gets inputs and communicates with one or more human players.
