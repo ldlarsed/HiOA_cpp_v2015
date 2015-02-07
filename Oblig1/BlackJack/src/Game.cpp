@@ -16,10 +16,36 @@ void Game::initilizeNewGame() {
 	h_io.showPlayerNames(h_players);
 }
 
-void Game::runGame(){
+void Game::runGame() {
 	placeBets();
+	dealTable();
 }
 
-void Game::placeBets(){
+/**
+ * Takes bets from all present player in the beginning of the game
+ */
+void Game::placeBets() {
 	h_io.placeBets(&h_players);
+}
+
+/**
+ * Deals two cards to all present players and dealer.
+ */
+void Game::dealTable() {
+	card_deck.shuffle();
+
+	//Dealing out first card
+	for (unsigned int i = 0; i < h_players.size(); i++) {
+		h_players.at(i).giveCard(card_deck.getCard());
+		bank.giveCard(card_deck.getCard());
+	}
+
+	//Dealing out second card
+	for (unsigned int i = 0; i < h_players.size(); i++) {
+		h_players.at(i).giveCard(card_deck.getCard());
+		bank.giveCard(card_deck.getCard());
+	}
+
+	h_io.showDealedCards(h_players, bank);
+
 }

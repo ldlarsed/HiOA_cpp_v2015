@@ -20,7 +20,13 @@ public:
 	Card(Suit suit, CardType c_type);
 	virtual ~Card();
 
+	/**
+	 * Returns the suit of the card.
+	 */
 	Suit getSuit();
+	/**
+	 * Returns the type of card like ACE, KING, 9, 3 ...
+	 */
 	CardType getCardType();
 
 	std::string getSuitString();

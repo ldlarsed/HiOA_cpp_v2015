@@ -11,9 +11,14 @@ public:
 
 	virtual ~ScoreCalc();
 
-	static int requestValue(int table_score, Card card);
+	/**
+	 * @param user_table_score: User's actual table score. Supposed to be used to determine the calue of a hard Ace of soft Ace
+	 */
+	int requestValue(int user_table_score, Card card);
 
 private:
+	int getStandardValue(int user_table_score, Card card);
+	int getAceValue(int user_table_score);
 
 };
 

@@ -38,11 +38,13 @@ char HumanIO::getSingleInputChar() {
 }
 
 int HumanIO::getSingleInputInt() {
-	int read_in;
+	int read_in, read_storage;
 	do {
 		read_in = getchar();
-	} while (read_in != '\n');
-	return read_in;
+		if (read_in != '\n')
+			read_storage = read_in;
+	} while (read_in != '\n' && read_in != EOF);
+	return (int) read_storage - '0';
 }
 
 int HumanIO::getNumberOfPlayers() {
@@ -85,14 +87,15 @@ void HumanIO::placeBets(vector<HPlayer>* h_players) {
 	cout << strings::BET_CHOICES << endl;
 
 	for (unsigned int i = 0; i < h_players->size(); i++) {
-		cout << ((HPlayer) h_players->at(i)).getPlayerName() << endl;
+		cout << h_players->at(i).getPlayerName() << endl;
 		bet = getSingleInputInt();
-		((HPlayer) h_players->at(i)).setBet(bet);
+		cout << "Setting bet " << bet << endl;
+		h_players->at(i).setBet(bet);
 		bet = 0;
 	}
 	for (unsigned int i = 0; i < h_players->size(); i++) {
-		cout << ((HPlayer) h_players->at(i)).getPlayerName() << ": "
-				<< ((HPlayer) h_players->at(i)).getBet() << endl;
+		cout << h_players->at(i).getPlayerName() << ": "
+				<< h_players->at(i).getBet() << endl;
 	}
 }
 
@@ -101,6 +104,16 @@ void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
 		cout << ((HPlayer) h_players[i]).getPlayerName() << "\t";
 	}
 	cout << endl << endl;
+}
+
+void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
+	stringstream ss;
+	for (unsigned int i = 0; i < h_players.size(); i++) {
+		ss << h_players[i].removeLastCard().getFullCardName() << endl;
+	}
+	ss << bank.removeLastCard().getFullCardName() << endl;
+
+	cout << ss.str() << endl;
 }
 
 void HumanIO::message(string message, bool new_line) {

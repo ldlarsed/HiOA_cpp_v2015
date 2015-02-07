@@ -6,6 +6,7 @@
 #include "PlayerAction.h"
 #include "Player.h"
 #include "HPlayer.h"
+#include "Bank.h"
 
 /**
  * Gets inputs and communicates with one or more human players.
@@ -26,6 +27,7 @@ public:
 	void placeBets(std::vector<HPlayer>* h_players);
 	void message(std::string message, bool new_line);
 	void showPlayerNames(std::vector<HPlayer>& h_players);
+	void showDealedCards(std::vector<HPlayer>& h_players, Bank& bank);
 
 private:
 	char input;

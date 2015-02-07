@@ -16,14 +16,17 @@ public:
 	Game();
 	Game(std::vector<HPlayer> h_players) {
 		this->h_players = h_players;
-	};
+	}
+	;
 	virtual ~Game();
 
 	void initilizeNewGame(); //Mostly used to testing prints out names of players participating in the game
 	void runGame();
 
 private:
+
 	void placeBets();
+	void dealTable();
 
 private:
 	Bank bank;

@@ -33,10 +33,47 @@ void Player::resetBet() {
 	this->hand_bet = 0;
 }
 
-int Player::getBet(){
+int Player::getBet() {
 	return this->hand_bet;
 }
 
-string Player::getPlayerName(){
+string Player::getPlayerName() {
 	return player_name;
+}
+
+/**
+ * Adds a card to the actual player hand
+ */
+void Player::giveCard(Card card) {
+	player_hand.push_back(card);
+}
+
+/**
+ * Pops a card from the player hand. Used for removing cards from user hand together with getCard()
+ */
+Card Player::removeLastCard() {
+	Card card = player_hand.back();
+	player_hand.pop_back();
+	return card;
+}
+
+/**
+ * Shows the size of user hand
+ */
+int Player::playerHandSize() {
+	return player_hand.size();
+}
+
+/**
+ * Returns the score of actual player hand.
+ */
+int Player::getHandScore(){
+	return hand_score;
+}
+
+/**
+ * Returns a referance to the actual player hand.
+ */
+deque<Card>& Player::getPlayerHand(){
+	return this->player_hand;
 }
