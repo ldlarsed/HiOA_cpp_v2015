@@ -31,7 +31,7 @@ public:
 	static unsigned int player_id;
 	int getPlayerId();
 	int getScore();
-	void updateScore(int score);
+	int updateHandScore(int score);
 	PlayerType getPlayerType();
 
 	void setBet(int bet);
@@ -47,8 +47,8 @@ public:
 	int getHandScore();
 	std::deque<Card>& getPlayerHand();
 	Card& showHandCardAt(int i);
+	Card& showLastCard();
 
-	void calculateScoreForHand();
 
 private:
 	int hand_score;
@@ -61,6 +61,8 @@ private:
 	std::deque<Card> player_hand; //Deque for the actual player hand
 	int hand_size;
 	ScoreCalc sc;
+
+	void calculateScoreForHand();
 
 	static void incrementPlayerID(){
 		++Player::player_id;

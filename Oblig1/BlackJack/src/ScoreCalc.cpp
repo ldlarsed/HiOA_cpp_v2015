@@ -58,3 +58,11 @@ int ScoreCalc::getAceValue(int user_table_score) {
 		return 10;
 	return 1;
 }
+
+std::string ScoreCalc::wonOrlost(int score) {
+	if (score == 21)
+		return "BlackJack!";
+	else if(score > 21)
+		return "BUSTED";
+	return "";
+}

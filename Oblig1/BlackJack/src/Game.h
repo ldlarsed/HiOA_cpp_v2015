@@ -8,6 +8,9 @@
 #include "Bank.h"
 #include "HumanIO.h"
 #include "Strings.h"
+#include "PlayerAction.h"
+#include "Card.h"
+#include "ScoreCalc.h"
 
 class Game {
 
@@ -26,12 +29,15 @@ private:
 
 	void placeBets();
 	void dealTable();
+	void requestPlayerAction();
+	void getDealerPoints();
 
 private:
 	Bank bank;
 	CardDeck card_deck;
 	std::vector<HPlayer> h_players;
 	HumanIO h_io;
+	ScoreCalc sc;
 
 };
 #endif // GAME_H

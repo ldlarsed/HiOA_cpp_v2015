@@ -29,6 +29,7 @@ public:
 	void message(std::string message, bool new_line);
 	void showPlayerNames(std::vector<HPlayer>& h_players);
 	void showDealedCards(std::vector<HPlayer>& h_players, Bank& bank);
+	PlayerAction requestPlayerAction(HPlayer& h_player);
 
 private:
 	char input;

@@ -50,9 +50,11 @@ int HumanIO::getSingleInputInt() {
 
 int HumanIO::getNumberOfPlayers() {
 	cout << strings::NUMBER_OF_PLAYERS << endl;
-	input = getSingleInputChar();
-	cout << "Starting game for " << input << " players" << endl;
-	return atoi(&input);
+//	input = getSingleInputChar();
+	int input_int = getSingleInputInt();
+	cout << "Starting game for " << input_int << " players" << endl;
+	//return atoi(&input);
+	return input_int;
 }
 
 vector<string> HumanIO::getPlayerNames(int number_of_players) {
@@ -112,24 +114,55 @@ void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
  */
 void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
 	stringstream ss;
+
+	//Getting cards for every player
 	for (unsigned int i = 0; i < h_players.size(); i++) {
 
 		ss << h_players[i].getPlayerName() << ": ";
 
-		for(int j = 0; j < h_players[i].getHandSize(); j++){
+		for (int j = 0; j < h_players[i].getHandSize(); j++) {
 			ss << h_players[i].showHandCardAt(j).getFullCardName() << ", ";
 		}
 		ss << h_players[i].getHandScore();
 		ss << endl;
 	}
-	ss << bank.getPlayerName() << ": ";
-	ss << bank.removeLastCard().getFullCardName() << endl;
 
+	//Printign out cards of dealer
+	ss << bank.getPlayerName() << ": ";
+	for (int i = 0; i < bank.getHandSize(); i++) {
+		ss << bank.showHandCardAt(i).getFullCardName() << ", ";
+	}
+	ss << bank.getHandScore();
 	cout << ss.str() << endl;
 }
 
+/**
+ * Request for action from player.
+ * For now it only handles HIT and STAND actions.
+ */
+PlayerAction HumanIO::requestPlayerAction(HPlayer& h_player) {
+
+	cout << endl << "Player " << h_player.getPlayerName() << " "
+			<< "(1) HIT, (2) STAND" << endl;
+
+	int action_received = getSingleInputInt();
+
+	//More actions can be implemented later on
+	switch (action_received) {
+	case 1:
+		return PlayerAction::Hit;
+		break;
+	default:
+		return PlayerAction::Stand;
+		break;
+	}
+}
+
 void HumanIO::message(string message, bool new_line) {
-	cout << message << (new_line) ? "\n" : "";
+	if (new_line)
+		cout << message << endl;
+	else
+		cout << message;
 }
 
 //Eksempel på hvordan man kan lese hele strenger fra input fra bruker for å lese hele strenger

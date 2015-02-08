@@ -91,7 +91,21 @@ Card& Player::showHandCardAt(int i){
  * Calculates score for the actual playeer hand.
  */
 void Player::calculateScoreForHand(){
+	this->hand_score = 0; //Resetting the variable
 	for(unsigned i = 0; i < player_hand.size(); i++){
 		this->hand_score += sc.requestValue(hand_score, player_hand[i]);
 	}
+}
+
+int Player::updateHandScore(int score){
+	hand_score += score;
+	return hand_score;
+}
+
+/**
+ * Shows a referance to the last card i player hand.
+ * Useful to check which card user received after additional HIT.
+ */
+Card& Player::showLastCard(){
+	return player_hand.at(player_hand.size()-1);
 }
