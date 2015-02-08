@@ -8,12 +8,10 @@
 #include "BetSize.h"
 
 BetSize::BetSize() {
-	// TODO Auto-generated constructor stub
 
 }
 
 BetSize::~BetSize() {
-	// TODO Auto-generated destructor stub
 }
 
 /**

@@ -8,14 +8,14 @@
 #include "Test.h"
 
 using namespace std;
-
+/**
+ * The overall purpose of this class is test varios of methods.
+ */
 Test::Test() {
-	// TODO Auto-generated constructor stub
 
 }
 
 Test::~Test() {
-	// TODO Auto-generated destructor stub
 }
 
 void Test::sortAndPrintArray(int size, int arr[]) {
@@ -23,4 +23,9 @@ void Test::sortAndPrintArray(int size, int arr[]) {
 	for (int i = 0; i < size; i++)
 		cout << arr[i] << ", ";
 	cout << endl;
+}
+
+void Test::printSizeOfCardDeck(CardDeck& deck, string callPosition) {
+	cout << "Current size if the deck: " << deck.size() << " called from "
+			<< callPosition << endl;
 }

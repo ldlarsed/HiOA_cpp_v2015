@@ -59,10 +59,29 @@ int ScoreCalc::getAceValue(int user_table_score) {
 	return 1;
 }
 
-std::string ScoreCalc::wonOrlost(int score) {
+std::string ScoreCalc::bj_or_bust(int score) {
 	if (score == 21)
 		return "BlackJack!";
 	else if(score > 21)
 		return "BUSTED";
 	return "";
+}
+
+/**
+ * Score calculator. I'm not sure about all the rules but I'll guess when
+ * the score is even among player end the dealer even if both have a BJ
+ * then no one wins and player get it bet back.
+ */
+int ScoreCalc::win_or_loose(int dealer_score, int player_score, int player_bet){
+
+	if(player_score == 21 && dealer_score != 21)
+		return player_bet * 1.5;
+	else if(player_score < 21 && dealer_score > 21)
+		return player_bet;
+	else if(player_score < dealer_score)
+		return 0.0;
+	else if(player_score == dealer_score)
+		return player_bet;
+
+	return 0.0;
 }

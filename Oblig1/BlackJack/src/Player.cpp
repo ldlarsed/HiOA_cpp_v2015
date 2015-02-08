@@ -53,7 +53,8 @@ void Player::giveCard(Card card) {
  */
 Card Player::removeLastCard() {
 	Card card = player_hand.back();
-	player_hand.pop_back();
+//	player_hand.pop_back();
+	player_hand.erase(player_hand.end());
 	return card;
 }
 
@@ -67,7 +68,7 @@ int Player::getHandSize() {
 /**
  * Returns the score of actual player hand.
  */
-int Player::getHandScore(){
+int Player::getHandScore() {
 	calculateScoreForHand();
 	return hand_score;
 }
@@ -75,7 +76,7 @@ int Player::getHandScore(){
 /**
  * Returns a referance to the actual player hand.
  */
-deque<Card>& Player::getPlayerHand(){
+deque<Card>& Player::getPlayerHand() {
 	return this->player_hand;
 }
 
@@ -83,21 +84,21 @@ deque<Card>& Player::getPlayerHand(){
  * Return card referance from actual user hand.
  * Use with getHandSize to iterate.
  */
-Card& Player::showHandCardAt(int i){
+Card& Player::showHandCardAt(int i) {
 	return player_hand.at(i);
 }
 
 /**
  * Calculates score for the actual playeer hand.
  */
-void Player::calculateScoreForHand(){
+void Player::calculateScoreForHand() {
 	this->hand_score = 0; //Resetting the variable
-	for(unsigned i = 0; i < player_hand.size(); i++){
+	for (unsigned i = 0; i < player_hand.size(); i++) {
 		this->hand_score += sc.requestValue(hand_score, player_hand[i]);
 	}
 }
 
-int Player::updateHandScore(int score){
+int Player::updateHandScore(int score) {
 	hand_score += score;
 	return hand_score;
 }
@@ -106,6 +107,26 @@ int Player::updateHandScore(int score){
  * Shows a referance to the last card i player hand.
  * Useful to check which card user received after additional HIT.
  */
-Card& Player::showLastCard(){
-	return player_hand.at(player_hand.size()-1);
+Card& Player::showLastCard() {
+	return player_hand.at(player_hand.size() - 1);
+}
+
+void Player::resetScore() {
+	hand_score = 0;
+}
+
+void Player::resetHand(){
+	player_hand.clear();
+	hand_score = 0;
+	hand_size = 0;
+	hand_bet = 0;
+	previous_bet = 0;
+}
+
+void Player::giveCash(int payback){
+	cash += payback;
+}
+
+int* Player::showCash(){
+	return &cash;
 }

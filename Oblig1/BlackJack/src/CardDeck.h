@@ -25,6 +25,8 @@ public:
 	void printDeck();
 	Card getCard();
 	void putBackCard(Card card);
+	int size();
+	void reset();
 
 private:
 	std::vector<Card> tmp_card;

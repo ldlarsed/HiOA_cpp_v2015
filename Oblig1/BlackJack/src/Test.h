@@ -9,6 +9,7 @@
 #define BLACKJACK_SRC_TEST_H_
 #include <iostream>
 #include <algorithm>
+#include "CardDeck.h"
 
 class Test {
 public:
@@ -16,6 +17,7 @@ public:
 	virtual ~Test();
 
 	void sortAndPrintArray(int size, int arr[]);
+	static void printSizeOfCardDeck(CardDeck& deck, std::string callPosition);
 };
 
 #endif /* BLACKJACK_SRC_TEST_H_ */

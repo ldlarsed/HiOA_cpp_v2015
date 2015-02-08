@@ -99,9 +99,11 @@ void HumanIO::placeBets(vector<HPlayer>* h_players) {
 		bet = 0;
 	}
 	for (unsigned int i = 0; i < h_players->size(); i++) {
-		cout << endl << h_players->at(i).getPlayerName() << " bets $"
-				<< h_players->at(i).getBet() << endl << endl;
+		cout << h_players->at(i).getPlayerName() << " bets $"
+				<< h_players->at(i).getBet() << endl;
 	}
+
+	cout << endl;
 }
 
 void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
@@ -117,26 +119,28 @@ void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
 void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
 	stringstream ss;
 
-	ss << "Player\t" << "Card 1\t\t" << "\tCard 2\t\t  " << "\tScore" << endl;
+//	ss << "Player\t" << "Card 1\t" << "Card 2\t " << "Score" << endl;
+
+	ss << endl << "---=== DEAL ===---" << endl;
 
 	//Getting cards for every player
 	for (unsigned int i = 0; i < h_players.size(); i++) {
 
-		ss << h_players[i].getPlayerName() << ":\t";
+		ss << h_players[i].getPlayerName() << "\t|";
 
 		for (int j = 0; j < h_players[i].getHandSize(); j++) {
-			ss << h_players[i].showHandCardAt(j).getFullCardName() << "\t  ";
+			ss << h_players[i].showHandCardAt(j).getFullCardName() << " | ";
 		}
-		ss << "\t"<< h_players[i].getHandScore();
+		ss <<  "Score: " << h_players[i].getHandScore();
 		ss << endl;
 	}
 
 	//Printign out cards of dealer
-	ss << bank.getPlayerName() << ": ";
+	ss << bank.getPlayerName() << "\t|";
 	for (int i = 0; i < bank.getHandSize(); i++) {
-		ss << bank.showHandCardAt(i).getFullCardName() << ", ";
+		ss << bank.showHandCardAt(i).getFullCardName() << " | ";
 	}
-	ss << bank.getHandScore();
+	ss << "Score: " << bank.getHandScore();
 	cout << ss.str() << endl << endl;
 }
 

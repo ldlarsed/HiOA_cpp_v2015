@@ -48,10 +48,12 @@ public:
 	Card& showHandCardAt(int i);
 	Card& showLastCard();
 
-	void resetScore(){
-		hand_score = 0;
-		hand_size = 0;
-	}
+	void resetScore();
+	void resetHand();
+
+	void giveCash(int payback);
+	int* showCash();
+
 
 private:
 	int hand_score;

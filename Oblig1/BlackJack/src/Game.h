@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <sstream>
-#include <map>
 #include "CardDeck.h"
 #include "HPlayer.h"
 #include "Bank.h"
@@ -12,6 +11,7 @@
 #include "PlayerAction.h"
 #include "Card.h"
 #include "ScoreCalc.h"
+#include "Test.h"
 
 class Game {
 
@@ -25,6 +25,7 @@ public:
 
 	void initilizeNewGame(); //Mostly used to testing prints out names of players participating in the game
 	void runGame();
+	void showPlayerStats();
 
 private:
 
@@ -34,6 +35,12 @@ private:
 	void showDealerPoints();
 	void presentWinners();
 	void putBackCards();
+	/**
+	 * My sneeky comparator to sort an vector by the results for each player.
+	 */
+	static bool resultsComp(const std::pair<Player*, int*>& i, const std::pair<Player*, int*>& j){
+		return i.second < j.second;
+	};
 
 private:
 	Bank bank;
@@ -41,6 +48,7 @@ private:
 	std::vector<HPlayer> h_players;
 	HumanIO h_io;
 	ScoreCalc sc;
+
 
 };
 #endif // GAME_H
