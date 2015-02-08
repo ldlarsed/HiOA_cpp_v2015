@@ -64,6 +64,13 @@ Card CardDeck::getCard(){
 
 }
 
+/**
+ * Puts back a earlier "borrowed" card
+ */
+void CardDeck::putBackCard(Card card){
+	deck.push_back(card);
+}
+
 void CardDeck::printDeck() {
 //	Brukte slik måte for å skrive ut en vektir
 //	for (int i = 0; i < NUMBER_OF_CARDS; i++) {

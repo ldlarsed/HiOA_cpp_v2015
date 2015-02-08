@@ -30,7 +30,6 @@ public:
 public:
 	static unsigned int player_id;
 	int getPlayerId();
-	int getScore();
 	int updateHandScore(int score);
 	PlayerType getPlayerType();
 
@@ -49,6 +48,10 @@ public:
 	Card& showHandCardAt(int i);
 	Card& showLastCard();
 
+	void resetScore(){
+		hand_score = 0;
+		hand_size = 0;
+	}
 
 private:
 	int hand_score;

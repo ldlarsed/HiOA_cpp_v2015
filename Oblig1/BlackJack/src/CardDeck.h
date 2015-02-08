@@ -24,6 +24,7 @@ public:
 	void shuffle();
 	void printDeck();
 	Card getCard();
+	void putBackCard(Card card);
 
 private:
 	std::vector<Card> tmp_card;

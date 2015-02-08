@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <sstream>
+#include <map>
 #include "CardDeck.h"
 #include "HPlayer.h"
 #include "Bank.h"
@@ -30,7 +31,9 @@ private:
 	void placeBets();
 	void dealTable();
 	void requestPlayerAction();
-	void getDealerPoints();
+	void showDealerPoints();
+	void presentWinners();
+	void putBackCards();
 
 private:
 	Bank bank;

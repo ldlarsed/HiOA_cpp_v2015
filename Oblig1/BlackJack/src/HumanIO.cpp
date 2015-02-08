@@ -90,21 +90,23 @@ void HumanIO::placeBets(vector<HPlayer>* h_players) {
 	cout << strings::BET_CHOICES << endl;
 
 	for (unsigned int i = 0; i < h_players->size(); i++) {
-		cout << h_players->at(i).getPlayerName() << endl;
+		cout << endl << h_players->at(i).getPlayerName()
+				<< " please choose your bet?" << endl;
 		bet = BetSize::getBetAmount(getSingleInputInt());
-		cout << "Setting bet $" << bet << endl;
+		cout << "Setting bet $" << bet << " for "
+				<< h_players->at(i).getPlayerName()<< ". " << endl;
 		h_players->at(i).setBet(bet);
 		bet = 0;
 	}
 	for (unsigned int i = 0; i < h_players->size(); i++) {
-		cout << h_players->at(i).getPlayerName() << " bets $"
-				<< h_players->at(i).getBet() << endl;
+		cout << endl << h_players->at(i).getPlayerName() << " bets $"
+				<< h_players->at(i).getBet() << endl << endl;
 	}
 }
 
 void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
 	for (unsigned int i = 0; i < h_players.size(); i++) {
-		cout << ((HPlayer) h_players[i]).getPlayerName() << "\t";
+		cout << ((HPlayer) h_players[i]).getPlayerName() << ", ";
 	}
 	cout << endl << endl;
 }
@@ -115,15 +117,17 @@ void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
 void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
 	stringstream ss;
 
+	ss << "Player\t" << "Card 1\t\t" << "\tCard 2\t\t  " << "\tScore" << endl;
+
 	//Getting cards for every player
 	for (unsigned int i = 0; i < h_players.size(); i++) {
 
-		ss << h_players[i].getPlayerName() << ": ";
+		ss << h_players[i].getPlayerName() << ":\t";
 
 		for (int j = 0; j < h_players[i].getHandSize(); j++) {
-			ss << h_players[i].showHandCardAt(j).getFullCardName() << ", ";
+			ss << h_players[i].showHandCardAt(j).getFullCardName() << "\t  ";
 		}
-		ss << h_players[i].getHandScore();
+		ss << "\t"<< h_players[i].getHandScore();
 		ss << endl;
 	}
 
@@ -133,7 +137,7 @@ void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
 		ss << bank.showHandCardAt(i).getFullCardName() << ", ";
 	}
 	ss << bank.getHandScore();
-	cout << ss.str() << endl;
+	cout << ss.str() << endl << endl;
 }
 
 /**
@@ -142,8 +146,9 @@ void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
  */
 PlayerAction HumanIO::requestPlayerAction(HPlayer& h_player) {
 
-	cout << endl << "Player " << h_player.getPlayerName() << " "
-			<< "(1) HIT, (2) STAND" << endl;
+	cout << endl << "Player " << h_player.getPlayerName()
+			<< " please choose your action " << endl << "(1)HIT or (2)STAND"
+			<< endl;
 
 	int action_received = getSingleInputInt();
 
