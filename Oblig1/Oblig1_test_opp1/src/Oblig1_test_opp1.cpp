@@ -74,7 +74,7 @@ string decryptEncrypted() {
 
 int main() {
 
-	findEncryption();
+//	findEncryption();
 
 	// Print out the messages in human-readable form!
 	cout << "Message 1: " << decryptMsg1() << endl;
