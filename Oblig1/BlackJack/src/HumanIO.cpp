@@ -136,11 +136,15 @@ void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
 	}
 
 	//Printign out cards of dealer
+	//Second card is not suposed to be visible for other players
 	ss << bank.getPlayerName() << "\t|";
-	for (int i = 0; i < bank.getHandSize(); i++) {
-		ss << bank.showHandCardAt(i).getFullCardName() << " | ";
-	}
-	ss << "Score: " << bank.getHandScore();
+//	for (int i = 0; i < bank.getHandSize(); i++) {
+//		ss << bank.showHandCardAt(i).getFullCardName() << " | ";
+//	}
+	ss << bank.showHandCardAt(0).getFullCardName() << " | ";
+	ss << "*************" << " | ";
+//	ss << "Score: " << bank.getHandScore();
+	ss << "Score: *";
 	cout << ss.str() << endl << endl;
 }
 
