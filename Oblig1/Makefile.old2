@@ -1,0 +1,20 @@
+GPP=g++
+CXXFLAGS=-std=c++11
+OPP=./oppvarming/src/
+BJCK=./blackjack/src/
+SOURCE=./oppvarming/src/oppvarming.cpp 
+
+OBJ= ./oppvarming/src/oppvarming
+
+
+all: $(OBJ) $(CXX)
+
+oppvarming:
+	$(GPP) ${GPPOPT} -o
+
+blackjack:
+	$(GPP) $(GPPOPT) $(BJCK)blackjack.cpp -o $@
+
+
+clean: 
+	-$(RM) $(OBJ)
