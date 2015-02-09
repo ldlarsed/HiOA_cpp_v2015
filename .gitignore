@@ -89,5 +89,3 @@ hs_err_pid*
 #Eget
 *.d
 Debug/
-*
-!*.*
