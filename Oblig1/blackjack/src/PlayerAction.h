@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef PLAYERACTION_H_
-#define PLAYERACTION_H_
+#ifndef BLACKJACK_SRC_PLAYERACTION_H_
+#define BLACKJACK_SRC_PLAYERACTION_H_
 
 enum PlayerAction{
 	Hit, Stand, Double, Split, Bet, Rebet
@@ -14,4 +14,4 @@ enum PlayerAction{
 
 
 
-#endif /* PLAYERACTION_H_ */
+#endif /* BLACKJACK_SRC_PLAYERACTION_H_ */

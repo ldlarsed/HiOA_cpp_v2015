@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef STRINGS_H_
-#define STRINGS_H_
+#ifndef BLACKJACK_SRC_STRINGS_H_
+#define BLACKJACK_SRC_STRINGS_H_
 
 #include <string>
 
@@ -20,4 +20,4 @@ namespace strings {
 
 }
 
-#endif /* STRINGS_H_ */
+#endif /* BLACKJACK_SRC_STRINGS_H_ */

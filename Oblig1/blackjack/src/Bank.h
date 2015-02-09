@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef BANK_H_
-#define BANK_H_
+#ifndef BLACKJACK_SRC_BANK_H_
+#define BLACKJACK_SRC_BANK_H_
 
 #include "Player.h"
 
@@ -19,4 +19,4 @@ public:
 
 };
 
-#endif /* BANK_H_ */
+#endif /* BLACKJACK_SRC_BANK_H_ */

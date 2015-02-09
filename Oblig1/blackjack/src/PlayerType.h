@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef PLAYERTYPE_H_
-#define PLAYERTYPE_H_
+#ifndef BLACKJACK_SRC_PLAYERTYPE_H_
+#define BLACKJACK_SRC_PLAYERTYPE_H_
 
 
 enum PlayerType{
@@ -14,4 +14,4 @@ enum PlayerType{
 };
 
 
-#endif /* PLAYERTYPE_H_ */
+#endif /* BLACKJACK_SRC_PLAYERTYPE_H_ */

@@ -5,8 +5,8 @@
  *      Author: luke
  */
 
-#ifndef BETSIZE_H_
-#define BETSIZE_H_
+#ifndef BLACKJACK_SRC_BETSIZE_H_
+#define BLACKJACK_SRC_BETSIZE_H_
 
 class BetSize {
 public:
@@ -16,4 +16,4 @@ public:
 	static int getBetAmount(int choosen_option);
 };
 
-#endif /* BETSIZE_H_ */
+#endif /* BLACKJACK_SRC_BETSIZE_H_ */
