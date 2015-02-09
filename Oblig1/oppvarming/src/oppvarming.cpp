@@ -27,7 +27,7 @@ string decryptMsg1() {
 
 string decryptMsg2() {
 	stringstream ss;
-
+	
 	ss << (char*) &msg2;
 
 	return ss.str();

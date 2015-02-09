@@ -1,8 +1,8 @@
 GPP=g++
 GPPOPT=-std=c++11
-OPPV = "./Oppvarming/src/"
-BLJ = "./BlackJack/src/"
-SOURCES = ./BlackJack/src/blackjack.cpp ./BlackJack/src/HumanIO.cpp ./BlackJack/src/HPlayer.cpp ./BlackJack/src/BetSize.cpp ./BlackJack/src/Player.cpp ./BlackJack/src/ScoreCalc.cpp ./BlackJack/src/Bank.cpp ./BlackJack/src/Game.cpp ./BlackJack/src/Card.cpp ./BlackJack/src/CardDeck.cpp ./BlackJack/src/Strings.cpp ./BlackJack/src/Test.cpp
+OPPV = "./oppvarming/src/"
+BLJ = "./blackjack/src/"
+SOURCES = ./blackjack/src/blackjack.cpp ./blackjack/src/HumanIO.cpp ./blackjack/src/HPlayer.cpp ./blackjack/src/BetSize.cpp ./blackjack/src/Player.cpp ./blackjack/src/ScoreCalc.cpp ./blackjack/src/Bank.cpp ./blackjack/src/Game.cpp ./blackjack/src/Card.cpp ./blackjack/src/CardDeck.cpp ./blackjack/src/Strings.cpp ./blackjack/src/Test.cpp
 
 OBJ=oppvarming blackjack
 
@@ -14,6 +14,11 @@ oppvarming:
 blackjack:
 	$(GPP) $(GPPOPT) $(SOURCES) -o $@
 
+	
+clean: 
+	-$(RM) $(OBJ)
+
+	
 #BetSize.o : BetSize.cpp BetSize.h
 # 	$(GPP) $(GPPOPT) $(BLJ)BetSize.cpp -o $@
 # Card.o : Card.cpp Card.h
@@ -38,7 +43,3 @@ blackjack:
 # 	$(GPP) $(GPPOPT) $(BLJ)Player.cpp -o $@\
 
 
-
-
-clean: 
-	-$(RM) $(OBJ)

@@ -18,6 +18,7 @@ public:
 
 	void sortAndPrintArray(int size, int arr[]);
 	static void printSizeOfCardDeck(CardDeck& deck, std::string callPosition);
+private read();
 };
 
 #endif /* BLACKJACK_SRC_TEST_H_ */
