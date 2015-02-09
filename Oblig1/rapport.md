@@ -5,7 +5,7 @@ I oppgaven har jeg valgt å til mesteparten fokusere på objektorientering, stru
 
 ##Klassehierarki
 Klassehierarkien i programmet presenteres grafisk i UML diagrammet neden. Det er til største grad brukt polyformisme, arv og enum typer for klar dataintegritet. Det har varit hensiktsmessig å bruke en MVC struktur i programmet som er fordelt til største delen mellom klasser `Player` (model/business logic), `HumainIO` (view/interaksjon med spiller) og `Game` (controller).
-![klassehierarki](./blackjack/black_jack_uml.png)
+![klassehierarki](./oppgave2/black_jack_uml.png)
 
 ###Enum
 Jeg har tatt avgjøreslsen å bruke enum klasser for korttype og suit (ikke enum typer) ettersom klasse gjør dt mulig å implementere eventuelle metoder for hver enum typer. Det er derfor mulig nå å implenetere fesk en metode som gir fra seg en ascii tegn som forestiller feks *SPADES*. Slik funksjonalitet er foreløpig ikke implementeer ennå, enum blir kun brukt for å test type av kort.
