@@ -1,3 +1,7 @@
+#Eget, forhindrer filer uten extension
+*
+!*.*
+
 ##Eclipse
 *.pydevproject
 .metadata
