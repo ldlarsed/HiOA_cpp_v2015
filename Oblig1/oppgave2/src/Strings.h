@@ -17,6 +17,11 @@ namespace strings {
 	extern char const * PLACE_YOUR_BETS;
 	extern char const * BET_CHOICES;
 	extern char const * WELCOME_PLAYERS;
+	extern char const * ACTION;
+	extern char const * BET_ERROR;
+	extern char const * TO_FEW_PLAYERS_ERROR;
+	extern char const * TO_MANY_PLAYERS_ERROR;
+	extern char const * ACTION_ERROR;
 
 }
 

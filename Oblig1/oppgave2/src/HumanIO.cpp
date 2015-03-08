@@ -51,7 +51,16 @@ int HumanIO::getSingleInputInt() {
 int HumanIO::getNumberOfPlayers() {
 	cout << strings::NUMBER_OF_PLAYERS << endl;
 //	input = getSingleInputChar();
-	int input_int = getSingleInputInt();
+	int input_int;
+
+	do {
+		input_int = getSingleInputInt();
+		if (input_int < 1)
+			message(strings::TO_FEW_PLAYERS_ERROR, true);
+		else if (input_int > 5)
+			message(strings::TO_MANY_PLAYERS_ERROR, true);
+	} while (input_int < 1 || input_int > 5);
+
 	cout << "Starting game for " << input_int << " players" << endl;
 	//return atoi(&input);
 	return input_int;
@@ -81,20 +90,31 @@ void HumanIO::showCreatedPlayers(vector<string>& p_names) {
 	cout << flush;
 	cout << "Players in game: " << endl;
 	for (unsigned int i = 0; i < p_names.size(); i++)
-		cout << "Player " << i + 1 << " " << p_names[i] << endl;
+		cout << "Player " << i + 1 << " " << p_names[i] << ":$500"<< endl;
 }
 
 void HumanIO::placeBets(vector<HPlayer>* h_players) {
 	int bet = 0;
+	int user_input;
+	string user_name;
 	cout << strings::PLACE_YOUR_BETS << endl;
 	cout << strings::BET_CHOICES << endl;
 
 	for (unsigned int i = 0; i < h_players->size(); i++) {
+		user_name = h_players->at(i).getPlayerName();
 		cout << endl << h_players->at(i).getPlayerName()
 				<< " please choose your bet?" << endl;
-		bet = BetSize::getBetAmount(getSingleInputInt());
+		do {
+			user_input = getSingleInputInt();
+			bet = BetSize::getBetAmount(user_input);
+			if (user_input < 1 || user_input > 3) {
+				cout << user_name;
+				message(strings::BET_ERROR, false);
+				message(strings::BET_CHOICES, true);
+			}
+		} while (user_input < 1 || user_input > 3);
 		cout << "Setting bet $" << bet << " for "
-				<< h_players->at(i).getPlayerName()<< ". " << endl;
+				<< h_players->at(i).getPlayerName() << ". " << endl;
 		h_players->at(i).setBet(bet);
 		bet = 0;
 	}
@@ -108,7 +128,7 @@ void HumanIO::placeBets(vector<HPlayer>* h_players) {
 
 void HumanIO::showPlayerNames(vector<HPlayer>& h_players) {
 	for (unsigned int i = 0; i < h_players.size(); i++) {
-		cout << ((HPlayer) h_players[i]).getPlayerName() << ", ";
+		cout << ((HPlayer) h_players[i]).getPlayerName() << " $" << *((HPlayer) h_players[i]).showCash() <<", ";
 	}
 	cout << endl << endl;
 }
@@ -131,7 +151,7 @@ void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
 		for (int j = 0; j < h_players[i].getHandSize(); j++) {
 			ss << h_players[i].showHandCardAt(j).getFullCardName() << " | ";
 		}
-		ss <<  "Score: " << h_players[i].getHandScore();
+		ss << "Score: " << h_players[i].getHandScore();
 		ss << endl;
 	}
 
@@ -153,12 +173,18 @@ void HumanIO::showDealedCards(vector<HPlayer>& h_players, Bank& bank) {
  * For now it only handles HIT and STAND actions.
  */
 PlayerAction HumanIO::requestPlayerAction(HPlayer& h_player) {
+	string user_name = h_player.getPlayerName();
+	int action_received;
 
-	cout << endl << "Player " << h_player.getPlayerName()
-			<< " please choose your action " << endl << "(1)HIT or (2)STAND"
+	cout << endl << "Player " << user_name
+			<< " please choose your action " << endl << strings::ACTION
 			<< endl;
 
-	int action_received = getSingleInputInt();
+	do {
+		action_received = getSingleInputInt();
+		if(action_received < 1 || action_received > 2)
+			message(user_name+strings::ACTION_ERROR, true);
+	} while (action_received < 1 || action_received > 2);
 
 	//More actions can be implemented later on
 	switch (action_received) {

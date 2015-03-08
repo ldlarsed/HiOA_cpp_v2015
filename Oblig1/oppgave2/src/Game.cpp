@@ -35,8 +35,10 @@ void Game::runGame() {
 		h_io.message("Press (q) to quit <Enter> to continue", true);
 
 		option = h_io.getSingleInputChar();
-		if (option == 'q')
+		if (option == 'q') {
+			delete this;
 			return;
+		}
 	} while (true);
 }
 
@@ -197,19 +199,20 @@ void Game::showPlayerStats() {
 	stringstream ss;
 
 	ss << endl << "---=== STATS ===---" << endl;
-	ss << "Player\t\t" << "Total chips"<< endl;
+	ss << "Player\t\t" << "Total chips" << endl;
 
 	vector<pair<Player*, int*>> player_stats;
 
-	for(unsigned int i=0; i<h_players.size();i++){
-		player_stats.push_back(make_pair(&h_players[i], h_players[i].showCash()));
+	for (unsigned int i = 0; i < h_players.size(); i++) {
+		player_stats.push_back(
+				make_pair(&h_players[i], h_players[i].showCash()));
 	}
 
 	sort(player_stats.begin(), player_stats.end(), resultsComp);
 
-	for(unsigned int i = 0; i<player_stats.size();i++){
-		ss << player_stats[i].first->getPlayerName() << "\t\t" << "$" <<
-				*player_stats[i].second << endl;
+	for (unsigned int i = 0; i < player_stats.size(); i++) {
+		ss << player_stats[i].first->getPlayerName() << "\t\t" << "$"
+				<< *player_stats[i].second << endl;
 	}
 
 	h_io.message(ss.str(), true);

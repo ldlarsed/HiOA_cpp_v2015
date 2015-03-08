@@ -54,10 +54,17 @@ int ScoreCalc::getStandardValue(int user_table_score, Card card) {
 }
 
 int ScoreCalc::getAceValue(int user_table_score) {
-	if (user_table_score <= 11)
+	int possible_result = user_table_score + 11;
+	if (possible_result == 21)
 		return 10;
 	return 1;
 }
+
+//int ScoreCalc::getAceValue(int user_table_score) {
+//	if (user_table_score <= 11)
+//		return 10;
+//	return 1;
+//}
 
 std::string ScoreCalc::bj_or_bust(int score) {
 	if (score == 21)
@@ -74,14 +81,31 @@ std::string ScoreCalc::bj_or_bust(int score) {
  */
 int ScoreCalc::win_or_loose(int dealer_score, int player_score, int player_bet){
 
-	if(player_score == 21 && dealer_score != 21)
-		return player_bet * 1.5;
-	else if(player_score < 21 && dealer_score > 21)
-		return player_bet;
-	else if(player_score < dealer_score)
+	int delta_dealer_score = 21-dealer_score;
+	int delta_player_score = 21-player_score;
+
+	if(player_score == dealer_score)
 		return 0.0;
-	else if(player_score == dealer_score)
+	else if(player_score == 21)
+		return player_bet*1.5;
+	else if(dealer_score > 21)
+		return player_bet;
+	else if(delta_dealer_score < delta_player_score)
+		return player_bet*-1;
+	else if(player_score < 21 && player_score > dealer_score)
 		return player_bet;
 
-	return 0.0;
+	//I følgende regler finnes det en del feil
+//	if(player_score == 21 && dealer_score != 21)
+//		return player_bet * 1.5;
+//	else if(player_score < 21 && dealer_score > 21)
+//		return player_bet;
+//	else if(player_score < dealer_score)
+//		return player_bet*-1;
+//	else if(player_score > 21)
+//		return player_bet*-1;
+//	else if(player_score == dealer_score)
+//		return player_bet;
+
+	return player_bet*-1;
 }
