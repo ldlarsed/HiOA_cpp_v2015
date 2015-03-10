@@ -1,6 +1,9 @@
 #Eget, forhindrer filer uten extension
-*
-!*.*
+#*
+#!*.*
+#Hardkoder de egne kompilerte filer
+blackjack
+oppvarming
 
 ##Eclipse
 *.pydevproject
