@@ -120,7 +120,7 @@ int main(int argc, char** argv) {
 
 	Fl_Window* window = new Fl_Window { 640, 480, "Luke's Window" };
 
-	min_box *box1 = new min_box { 0, 0, 340, 180 };
+	min_box *box1 = new min_box { 0, 0, 1, 2 };
 	min_box2 *box2 = new min_box2 { 0, 0, 340, 180 };
 
 	Fl::add_timeout(0.3, kall_opp, window);
