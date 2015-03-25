@@ -7,6 +7,7 @@
 //Local includes
 #include "dot.hpp"
 #include "AbstractDotFactory.hpp"
+#include "dot_blinking.hpp"
 
 //Denne må jeg få lov til å kommentere vekk hvis oppgave 2 skal fungere.
 //class AbstractDotFactory;

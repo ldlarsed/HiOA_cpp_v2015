@@ -7,6 +7,7 @@
 
 #include "NormalDotFactory.hpp"
 
+
 NormalDotFactory::NormalDotFactory() {
 	// TODO Auto-generated constructor stub
 
@@ -17,5 +18,5 @@ NormalDotFactory::~NormalDotFactory() {
 }
 
 dot* NormalDotFactory::createDot(int x, int y){
-	return new dot {x,y, 5};
+	return new dot {x,y, 2.0};
 }

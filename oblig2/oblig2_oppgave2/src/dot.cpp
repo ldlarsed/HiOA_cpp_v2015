@@ -41,6 +41,17 @@ void dot::draw() {
 void dot::operator ++() {
 	increment_position();
 	draw();
+
+//	int change_col=0;
+//
+//	if(change_col < 10){
+//		change_col++;
+//	}else{
+//		visibility();
+//		change_col=0;
+//	}
+
+
 //	lighten_color();
 //	darken_color();
 }

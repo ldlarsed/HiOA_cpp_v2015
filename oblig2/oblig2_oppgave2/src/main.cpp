@@ -12,7 +12,8 @@
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
 #include <FL/fl_draw.H>
-#include "fireworks.hpp"
+//#include "fireworks.hpp"
+#include "fireworks2.hpp"
 
 using namespace std;
 
@@ -25,7 +26,8 @@ int main(int argc, char** argv) {
 
 	Fl_Window* window = new Fl_Window { w, h, l };
 	window->color(FL_DARK_BLUE);
-	fireworks* f = new fireworks { l, w, h, 5 };
+//	fireworks* f = new fireworks { l, w, h, 20 };
+	fireworks2* f = new fireworks2 { l, w, h, 20 };
 
 	Fl::add_timeout(0.1, animation_canvas::timer, window);
 

@@ -31,7 +31,7 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y,
 
 	//Fyller rocket med dots
 	for (int i = 0; i < _dotcount; i++) {
-		dot* _dot = dotFactory->createDot(x,y);
+		dot* _dot = dotFactory->createDot(x, y);
 		dots.push_back(_dot);
 	}
 }
@@ -52,15 +52,23 @@ void *countDown(void *lunte) {
  */
 void rocket::operator++() {
 
-	if (fuse > 0) {
-		pthread_create(&thread, NULL, countDown, (void*) fuse);
-//		countDown(&fuse);
-//		sleep(fuse);
-//		fuse=0;
-//		pthread_join(t, NULL);
-		fuse = 0;
-	} else {
+//	if (fuse > 0) {
+//		pthread_create(&thread, NULL, countDown, (void*) fuse);
+////		countDown(&fuse);
+////		sleep(fuse);
+////		fuse=0;
+////		pthread_join(t, NULL);
+//		fuse = 0;
+//	} else {
+//		for (dot* d : dots)
+//			++(*d);
+//	}
+
+//Prøver å lage fuse på en annen måte enn med threads
+	if (fuse == 0) {
 		for (dot* d : dots)
 			++(*d);
+	} else if (fuse > 0){
+		fuse--;
 	}
 }
