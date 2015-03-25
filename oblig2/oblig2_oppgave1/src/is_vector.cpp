@@ -17,7 +17,7 @@ is_vector::is_vector(double x, double y) {
 
 	direction_ = rand() % 360;
 	speed_ = rand() % 10;
-	std::cout << direction_ << std::endl;
+//	std::cout << direction_ << std::endl;
 }
 
 void is_vector::increment_position() {

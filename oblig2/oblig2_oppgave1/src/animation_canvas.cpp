@@ -14,6 +14,7 @@
 #include <FL/fl_draw.H>
 #include "animation_canvas.hpp"
 
+
 animation_canvas::animation_canvas(const char *l, int w, int h) :
 		Fl_Box(0, 0, 800, 600) {
 
@@ -41,6 +42,7 @@ void animation_canvas::timer(void* canvas) {
 void animation_canvas::draw() {
 //	std::cout << "animation_canvas::draw() kjører" << std::endl;
 
-	for (animated* a : parts)
+	for (animated* a : parts) {
 		++(*a);
+	}
 }

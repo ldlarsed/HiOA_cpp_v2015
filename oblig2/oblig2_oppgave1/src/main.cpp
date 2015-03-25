@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include <thread>
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
@@ -23,13 +24,13 @@ int main(int argc, char** argv) {
 	const char *l = "Test window";
 
 	Fl_Window* window = new Fl_Window { w, h, l };
+	window->color(FL_DARK_BLUE);
 	fireworks* f = new fireworks { l, w, h, 5 };
 
 	Fl::add_timeout(0.1, animation_canvas::timer, window);
 
 	window->end();
 	window->show(argc, argv);
-
 
 	Fl::run();
 

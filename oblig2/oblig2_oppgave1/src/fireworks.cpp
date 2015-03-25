@@ -19,7 +19,7 @@ fireworks::fireworks(const char* title, int w, int h, int _rocketcount) :
 
 //Legger til rockets inn i animation_canvas
 	for (int i = 0; i < _rocketcount; i++)
-		add(new rocket { 200, 5, 10, (rand() % w), (rand() % h-200) });
+		add(new rocket { 200, 5, 2, (rand() % w), (rand() % h-200) });
 
 
 }
