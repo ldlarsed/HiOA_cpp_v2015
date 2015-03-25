@@ -21,10 +21,10 @@ void dot_blinking::operator ++(){
 
 	if(blink){
 		darken_color();
-		blink=true;
+		blink=false;
 	}else{
 		lighten_color();
-		blink=false;
+		blink=true;
 	}
 
 	dot::operator ++();

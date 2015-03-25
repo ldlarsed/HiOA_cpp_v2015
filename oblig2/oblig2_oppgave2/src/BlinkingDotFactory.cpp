@@ -18,6 +18,5 @@ BlinkingDotFactory::~BlinkingDotFactory() {
 }
 
 dot* BlinkingDotFactory::createDot(int x, int y){
-	return new dot_blinking {x,y, 2.0};
-//		return new dot {x,y, 2.0};
+	return new dot_blinking {x,y, 5.0};
 }
