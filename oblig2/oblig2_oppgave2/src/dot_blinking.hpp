@@ -17,6 +17,9 @@ public:
 //	virtual ~dot_blinking();
 
 	void operator++() override;
+
+private:
+	bool blink=true;
 };
 
 #endif /* DOT_BLINKING_HPP_ */

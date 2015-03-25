@@ -18,5 +18,5 @@ NormalDotFactory::~NormalDotFactory() {
 }
 
 dot* NormalDotFactory::createDot(int x, int y){
-	return new dot {x,y, 2.0};
+	return new dot {x,y, 5.0};
 }

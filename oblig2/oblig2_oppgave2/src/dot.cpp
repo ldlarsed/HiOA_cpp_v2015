@@ -51,9 +51,14 @@ void dot::operator ++() {
 //		change_col=0;
 //	}
 
-
 //	lighten_color();
 //	darken_color();
+
+	if(speed()<1)
+		darken_color();
+	if(speed() < 5){
+		r-=0.25;
+	}
 }
 
 

@@ -24,7 +24,7 @@ MixedDotFactory* m_factory = new MixedDotFactory();
 
 //Legger til rockets inn i animation_canvas
 	for (int i = 0; i < _rocketcount; i++)
-		add(new rocket { 200, 5, (rand() % 50), (rand() % w), (rand() % h-200), b_factory});
+		add(new rocket { 200, 5, (rand() % (100+400)), (rand() % w), (rand() % (h-400)), n_factory});
 
 
 }

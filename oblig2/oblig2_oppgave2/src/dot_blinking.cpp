@@ -17,7 +17,16 @@
 //}
 
 void dot_blinking::operator ++(){
-	visibility();
+//	visibility();
+
+	if(blink){
+		darken_color();
+		blink=true;
+	}else{
+		lighten_color();
+		blink=false;
+	}
+
 	dot::operator ++();
 
 }

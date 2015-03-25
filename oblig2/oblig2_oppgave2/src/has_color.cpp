@@ -38,7 +38,12 @@ has_color::has_color(ColorPart red, ColorPart green, ColorPart blue) {
 }
 
 void has_color::darken_color() {
-	color_ = fl_darker(color_);
+//	color_ = fl_darker((Fl_Color) color_);
+	/*
+	 * Originalfunksjonen setter fargen kun til sort.
+	 * Setter derfor denne til å bli samme som bakgrunnen.
+	 */
+	color_ = FL_DARK_BLUE;
 }
 
 void has_color::lighten_color() {
