@@ -11,11 +11,13 @@
 #include "AbstractDotFactory.hpp"
 
 class TintedDotFactory: public AbstractDotFactory {
+
+	Fl_Color colrand;
 public:
 	TintedDotFactory();
 	virtual ~TintedDotFactory();
 
-	 dot* createDot(int x, int y);
+	dot* createDot(int x, int y);
 };
 
 #endif /* TINTEDDOTFACTORY_HPP_ */

@@ -11,10 +11,31 @@
 
 Color color_tmp = FL_DARK_BLUE;
 
+/**
+ * Opretter dotter med tilfeldig farge men som har en vekt mot
+ * lyse farger som oragne, gult og rødt.
+ */
 has_color::has_color(bool Random) {
-	int r = 200 + (random() % 55);
-	int g = 100 + (random() % 100);
-	int b = 100 + (random() % 100);
+
+	int r_main = rand() % 3;
+
+	int r = 0, g = 0, b = 0;
+
+	if (r_main == 0) {
+		r = 200 + (rand() % 55);
+		g = 0 + (rand() % 55);
+		b = 0 + (rand() % 55);
+	} else if (r_main == 1) {
+		r = 0 + (rand() % 55);
+		g = 200 + (rand() % 55);
+		b = 200 + (rand() % 55);
+	} else {
+		r = 200 + (rand() % 55);
+		g = 200 + (rand() % 55);
+		b = 200 + (rand() % 55);
+	}
+
+//	std::cout << "r_main: " << r_main << " ";
 //	std::cout << "r: " << r << " ";
 //	std::cout << "g: " << g << " ";
 //	std::cout << "b: " << b << std::endl;
@@ -30,6 +51,9 @@ has_color::has_color(Color start) :
 	blue_ = (ColorPart*) &start;
 }
 
+/**
+ * Så lang som jeg kan se er den konstruktøren ikke i bruk.
+ */
 has_color::has_color(ColorPart red, ColorPart green, ColorPart blue) {
 	red_ = (ColorPart*) &red;
 	green_ = (ColorPart*) &green;

@@ -45,4 +45,5 @@ void animation_canvas::draw() {
 	for (animated* a : parts) {
 		++(*a);
 	}
+
 }

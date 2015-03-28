@@ -14,7 +14,11 @@
 
 class MixedDotFactory: public AbstractDotFactory  {
 public:
-	MixedDotFactory();
+	/**
+	 * Lager disse parametre foreløpig og skal fylle på flere seinere.
+	 * Skal kompleteres med tinted factory når denne er ferdig.
+	 */
+	MixedDotFactory(NormalDotFactory* n, BlinkingDotFactory* m, TintedDotFactory* t);
 	virtual ~MixedDotFactory();
 
 	 dot* createDot(int x, int y);
