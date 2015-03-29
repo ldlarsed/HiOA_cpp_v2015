@@ -25,5 +25,5 @@ fireworks::fireworks(const char* title, int w, int h, int _rocketcount) :
 }
 
 fireworks::~fireworks() {
-
+	delete this;
 }

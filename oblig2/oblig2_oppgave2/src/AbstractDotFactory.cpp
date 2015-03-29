@@ -13,6 +13,6 @@ AbstractDotFactory::AbstractDotFactory() {
 }
 
 AbstractDotFactory::~AbstractDotFactory() {
-	// TODO Auto-generated destructor stub
+	delete this;
 }
 

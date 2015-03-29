@@ -79,12 +79,12 @@ float has_color::visibility() {
 	if (color_tmp != color_) {
 		color_ = FL_DARK_BLUE;
 		color_tmp = color_;
-		std::cout << "Ny farge: " << color_ << std::endl;
+//		std::cout << "Ny farge: " << color_ << std::endl;
 		return 0.0;
 	} else {
 		color_ = FL_GREEN;
 		color_tmp = FL_DARK_BLUE;
-		std::cout << "Ny farge: " << color_ << std::endl;
+//		std::cout << "Ny farge: " << color_ << std::endl;
 	}
 	return 1.0;
 }

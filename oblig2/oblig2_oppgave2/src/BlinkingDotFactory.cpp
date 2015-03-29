@@ -14,7 +14,7 @@ BlinkingDotFactory::BlinkingDotFactory() {
 }
 
 BlinkingDotFactory::~BlinkingDotFactory() {
-	// TODO Auto-generated destructor stub
+	delete this;
 }
 
 dot* BlinkingDotFactory::createDot(int x, int y){

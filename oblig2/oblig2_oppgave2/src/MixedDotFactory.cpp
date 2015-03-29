@@ -15,7 +15,7 @@ MixedDotFactory::MixedDotFactory(NormalDotFactory* n, BlinkingDotFactory* m, Tin
 }
 
 MixedDotFactory::~MixedDotFactory() {
-	// TODO Auto-generated destructor stub
+	delete this;
 }
 
 dot* MixedDotFactory::createDot(int x, int y){
@@ -24,7 +24,7 @@ dot* MixedDotFactory::createDot(int x, int y){
 
 	int r_mixed = rand() % 3;
 
-	std::cout << r_mixed;
+//	std::cout << r_mixed;
 
 	if(r_mixed==0)
 		return new dot_blinking{x,y, 5.0};

@@ -14,7 +14,7 @@ NormalDotFactory::NormalDotFactory() {
 }
 
 NormalDotFactory::~NormalDotFactory() {
-	// TODO Auto-generated destructor stub
+	delete this;
 }
 
 dot* NormalDotFactory::createDot(int x, int y){

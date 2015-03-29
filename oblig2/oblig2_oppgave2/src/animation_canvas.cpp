@@ -23,7 +23,7 @@ animation_canvas::animation_canvas(const char *l, int w, int h) :
 }
 
 animation_canvas::~animation_canvas() {
-
+	delete this;
 }
 
 void animation_canvas::add(animated* part) {

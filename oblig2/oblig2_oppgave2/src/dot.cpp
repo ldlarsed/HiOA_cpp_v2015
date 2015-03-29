@@ -27,7 +27,7 @@ dot::dot(float _x, float _y, float _r, Color c) :
 }
 
 dot::~dot() {
-
+	delete this;
 }
 
 void dot::draw() {

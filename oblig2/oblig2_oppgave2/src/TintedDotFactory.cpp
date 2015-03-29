@@ -6,11 +6,9 @@
  */
 
 #include "TintedDotFactory.hpp"
-#include <iostream>
 #include "dot_tinted.hpp"
 
 TintedDotFactory::TintedDotFactory() {
-
 
 	int p = rand() % 3;
 
@@ -40,7 +38,7 @@ dot* TintedDotFactory::createDot(int x, int y) {
 	int t = rand() % 8;
 
 	if (t < 5)
-	return new dot_tinted { x, y, 5.0, colrand };
+		return new dot_tinted { x, y, 5.0, colrand };
 
 	return new dot { x, y, 5.0 };
 }
