@@ -24,9 +24,10 @@ int main(int argc, char** argv) {
 //	int w = 1024, h = 760;
 	const char *l = "Luke's Fireworks";
 
-	Fl_Window* window = new Fl_Window { w, h, l };
+	Fl_Window* window = new Fl_Window { w, h, l};
 	window->color(FL_DARK_BLUE);
-	fireworks* f = new fireworks { l, w, h, 30 };
+//	fireworks* f = new fireworks { l, w, h, 30 };
+	new fireworks { l, w, h, 30 };
 
 	Fl::add_timeout(0.04, animation_canvas::timer, window);
 
@@ -35,7 +36,7 @@ int main(int argc, char** argv) {
 
 	Fl::run();
 
-	delete l;
-	delete f;
-	delete window;
+//	delete l;
+//	delete f;
+//	delete window;
 }
