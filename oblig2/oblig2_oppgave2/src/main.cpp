@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 
 	Fl::run();
 
-
+	delete l;
 	delete f;
 	delete window;
 
