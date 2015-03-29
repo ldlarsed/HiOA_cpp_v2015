@@ -27,7 +27,7 @@ dot::dot(float _x, float _y, float _r, Color c) :
 }
 
 dot::~dot() {
-
+	delete this;
 }
 
 void dot::draw() {
@@ -43,11 +43,17 @@ void dot::operator ++() {
 	draw();
 //	lighten_color();
 //	darken_color();
+
+	if(speed()<1)
+		darken_color();
+	if(speed() < 5){
+		r-=0.25;
+	}
 }
 
 
 
 void dot::reset() {
-
+	delete this;
 }
 

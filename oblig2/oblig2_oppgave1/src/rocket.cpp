@@ -9,11 +9,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <cstdlib>
-#include <thread>
-#include <pthread.h>
 #include "rocket.hpp"
-
-pthread_t thread;
 
 rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y) :
 		dotcount(_dotcount), fuse(_fuse) {
@@ -22,19 +18,18 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y) :
 	for (int i = 0; i < _dotcount; i++) {
 		dot* _dot = new dot { x, y, dotsize };
 		dots.push_back(_dot);
+//		_dot->reset();
+//		delete _dot;
 	}
 
 }
 
 rocket::~rocket() {
-}
-
-void *countDown(void *lunte) {
-//	sleep(2);
-	sleep((int&) lunte);
-	std::cout << "Thread sleeping: " << (int&) lunte << std::endl;
-	pthread_join(thread, NULL);
-//	pthread_exit(NULL);
+//	for (auto i : dots)
+//		delete i;
+	dots.clear();
+	delete &dots;
+	delete this;
 }
 
 /**
@@ -42,15 +37,11 @@ void *countDown(void *lunte) {
  */
 void rocket::operator++() {
 
-	if (fuse > 0) {
-		pthread_create(&thread, NULL, countDown, (void*) fuse);
-//		countDown(&fuse);
-//		sleep(fuse);
-//		fuse=0;
-//		pthread_join(t, NULL);
-		fuse = 0;
-	} else {
+	//Prøver å lage fuse på en annen måte enn med threads
+	if (fuse == 0) {
 		for (dot* d : dots)
 			++(*d);
+	} else if (fuse > 0) {
+		fuse--;
 	}
 }

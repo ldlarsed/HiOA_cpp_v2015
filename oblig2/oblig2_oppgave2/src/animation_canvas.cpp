@@ -14,7 +14,6 @@
 #include <FL/fl_draw.H>
 #include "animation_canvas.hpp"
 
-
 animation_canvas::animation_canvas(const char *l, int w, int h) :
 		Fl_Box(0, 0, 800, 600) {
 
@@ -23,6 +22,8 @@ animation_canvas::animation_canvas(const char *l, int w, int h) :
 }
 
 animation_canvas::~animation_canvas() {
+	for (auto i : parts)
+		delete i;
 	delete this;
 }
 

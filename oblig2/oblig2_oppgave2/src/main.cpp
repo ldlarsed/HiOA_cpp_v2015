@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
 
 //	int w = Fl::w(), h = Fl::h();
 	int w = 1024, h = 760;
-	const char *l = "Test window";
+	const char *l = "Luke's Fireworks";
 
 	Fl_Window* window = new Fl_Window { w, h, l };
 	window->color(FL_DARK_BLUE);

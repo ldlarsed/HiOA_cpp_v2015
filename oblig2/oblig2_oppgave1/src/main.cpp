@@ -20,18 +20,21 @@ int main(int argc, char** argv) {
 
 	srand(time(NULL));
 
-	int w = 800, h = 600;
-	const char *l = "Test window";
+	//	int w = Fl::w(), h = Fl::h();
+	int w = 1024, h = 760;
+	const char *l = "Luke's Fireworks";
 
 	Fl_Window* window = new Fl_Window { w, h, l };
 	window->color(FL_DARK_BLUE);
-	fireworks* f = new fireworks { l, w, h, 5 };
+	fireworks* f = new fireworks { l, w, h, 30 };
 
-	Fl::add_timeout(0.1, animation_canvas::timer, window);
+	Fl::add_timeout(0.04, animation_canvas::timer, window);
 
 	window->end();
 	window->show(argc, argv);
 
 	Fl::run();
 
+	delete f;
+	delete window;
 }

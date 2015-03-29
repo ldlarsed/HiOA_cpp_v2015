@@ -23,7 +23,9 @@ animation_canvas::animation_canvas(const char *l, int w, int h) :
 }
 
 animation_canvas::~animation_canvas() {
-
+	for(auto i : parts)
+		delete i;
+	delete this;
 }
 
 void animation_canvas::add(animated* part) {
@@ -31,7 +33,7 @@ void animation_canvas::add(animated* part) {
 }
 
 void animation_canvas::timer(void* canvas) {
-	Fl::repeat_timeout(0.1, timer, canvas);
+	Fl::repeat_timeout(0.04, timer, canvas);
 //	((animation_canvas*) canvas)->draw(); //Denne trenger man ikke.
 	((Fl_Box*) canvas)->redraw();
 }
