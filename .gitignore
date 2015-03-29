@@ -4,6 +4,7 @@
 #Hardkoder de egne kompilerte filer
 blackjack
 oppvarming
+src/*
 
 ##Eclipse
 *.pydevproject
