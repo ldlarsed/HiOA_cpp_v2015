@@ -28,6 +28,7 @@ rocket::~rocket() {
 	for (auto i : dots)
 		delete i;
 	dots.clear();
+	delete &dots;
 	delete this;
 }
 
