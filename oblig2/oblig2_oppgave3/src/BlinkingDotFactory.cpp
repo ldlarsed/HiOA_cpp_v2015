@@ -20,3 +20,7 @@ BlinkingDotFactory::~BlinkingDotFactory() {
 dot* BlinkingDotFactory::createDot(int x, int y){
 	return new dot_blinking {x,y, 5.0};
 }
+
+dot* BlinkingDotFactory::create_dot(int x, int y){
+	return new dot_blinking {x,y, 5.0};
+}

@@ -30,7 +30,9 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y,
 	//Fyller rocket med dots.
 	//OBS! Her finns det minneslekasje
 	for (int i = 0; i < _dotcount; i++) {
-		dot* _dot = dotFactory->createDot(x, y);
+//		dot* _dot = dotFactory->createDot(x, y);
+		//Prøver å kjøre med tinted factory
+		dot* _dot = dotFactory->create_dot(x,y);
 		dots.push_back(_dot);
 	}
 }

@@ -10,7 +10,7 @@
 #include "dot_blinking.hpp"
 #include "dot_tinted.hpp"
 
-MixedDotFactory::MixedDotFactory(NormalDotFactory* n, BlinkingDotFactory* m, TintedDotFactory* t) {
+MixedDotFactory::MixedDotFactory(NormalDotFactory* n, BlinkingDotFactory* m) {
 	// TODO Auto-generated constructor stub
 }
 
@@ -32,4 +32,17 @@ dot* MixedDotFactory::createDot(int x, int y){
 		return new dot_tinted{x,y, 5.0, FL_YELLOW};
 
 	return new dot{x,y, 5.0};
+}
+
+dot* MixedDotFactory::create_dot(int x, int y){
+	int r_mixed = rand() % 3;
+
+	//	std::cout << r_mixed;
+
+		if(r_mixed==0)
+			return new dot_blinking{x,y, 5.0};
+		else if(r_mixed == 1)
+			return new dot_tinted{x,y, 5.0, FL_YELLOW};
+
+	return new dot { x, y, 5.0 };
 }

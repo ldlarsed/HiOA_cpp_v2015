@@ -16,6 +16,7 @@ public:
 	virtual ~NormalDotFactory();
 
 	dot* createDot(int x, int y);
+	dot* create_dot(int x, int y);
 };
 
 #endif /* NORMALDOTFACTORY_HPP_ */

@@ -20,3 +20,7 @@ NormalDotFactory::~NormalDotFactory() {
 dot* NormalDotFactory::createDot(int x, int y){
 	return new dot {x,y, 5.0};
 }
+
+dot* NormalDotFactory::create_dot(int x, int y){
+	return new dot {x,y, 5.0};
+}

@@ -18,10 +18,11 @@ public:
 	 * Lager disse parametre foreløpig og skal fylle på flere seinere.
 	 * Skal kompleteres med tinted factory når denne er ferdig.
 	 */
-	MixedDotFactory(NormalDotFactory* n, BlinkingDotFactory* m, TintedDotFactory* t);
+	MixedDotFactory(NormalDotFactory* n, BlinkingDotFactory* m);
 	virtual ~MixedDotFactory();
 
 	 dot* createDot(int x, int y);
+	 dot* create_dot(int x, int y);
 };
 
 #endif /* MIXEDDOTFACTORY_HPP_ */
