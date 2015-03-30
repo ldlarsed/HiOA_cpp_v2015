@@ -16,7 +16,7 @@ public:
 	virtual ~BlinkingDotFactory();
 
 	 dot* createDot(int x, int y);
-	 dot* create_dot(int x, int y);
+//	 dot* create_dot(int x, int y);
 };
 
 #endif /* BLINKINGDOTFACTORY_HPP_ */

@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <cstdlib>
 #include "rocket.hpp"
+#include "TintedDotFactory.hpp"
 
 
 rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y) :
@@ -17,7 +18,8 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y) :
 
 	//Fyller rocket med dots
 	for (int i = 0; i < _dotcount; i++) {
-		dot* _dot = new dot { x, y, dotsize };
+//		dot* _dot = new dot { x, y, dotsize };
+		dot* _dot = TintedDotFactory<int>::create_dot(x,y);
 		dots.push_back(_dot);
 //		delete _dot;
 	}
@@ -30,9 +32,7 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y,
 	//Fyller rocket med dots.
 	//OBS! Her finns det minneslekasje
 	for (int i = 0; i < _dotcount; i++) {
-//		dot* _dot = dotFactory->createDot(x, y);
-		//Prøver å kjøre med tinted factory
-		dot* _dot = dotFactory->create_dot(x,y);
+		dot* _dot = dotFactory->createDot(x, y);
 		dots.push_back(_dot);
 	}
 }

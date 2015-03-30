@@ -22,7 +22,7 @@ public:
 	virtual ~MixedDotFactory();
 
 	 dot* createDot(int x, int y);
-	 dot* create_dot(int x, int y);
+//	 dot* create_dot(int x, int y);
 };
 
 #endif /* MIXEDDOTFACTORY_HPP_ */

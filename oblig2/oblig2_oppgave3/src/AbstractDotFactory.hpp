@@ -22,7 +22,7 @@ public:
 	 *
 	 */
 	virtual dot* createDot(int x, int y)=0;
-	virtual dot* create_dot(int x, int y)=0;
+//	static dot* create_dot(int x, int y);
 };
 
 #endif /* ABSTRACTDOTFACTORY_HPP_ */
