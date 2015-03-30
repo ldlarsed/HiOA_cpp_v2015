@@ -1,7 +1,7 @@
 #Oblig 2: Fyrverkeri
 
 ##Kompilering med `make`
-Oppgave 1,2 og 3 kan kompileres med `make fireworks`, `make fireworks2` eller `make fireworks3`. For å slette alle kompilerte og binære filer bruk `make clean`. Dersom ingen argument blir sendt til ´make´ kompileres kun oppgave 1. 
+Oppgave 1,2 og 3 kan kompileres med `make fireworks`, `make fireworks2` eller `make fireworks3`. For å slette alle kompilerte og binære filer bruk `make clean`. Dersom ingen argument blir sendt til `make` kompileres kun oppgave 1. 
 
 ##Oppgave 1
 Ferdig. 
