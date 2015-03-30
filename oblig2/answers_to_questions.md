@@ -22,7 +22,7 @@ Det som jeg hadde ønsket å se for meg er at faktisk `Fl_Box` må faktisk legge
 
  * Det hadde vært mulig å lage hele programmet i ferre antall klasser. Et eksempel over dette kunde ha vært noe som påminer om et enkelt MVC opplegg. 
 
- 1. En main klasse som instansierer `Fl_Window` og `Fl_Box`
- 2. Dot klasser i hvilken man kan spesifisere hvordan dotten skal dannes, antall og hvor den skal eksplodere i vinduet.
- 3. En kontroller klasse som sørger for oppretting av dotter og sender disse til visning i vinduet. 
+  1. En main klasse som instansierer `Fl_Window` og `Fl_Box`
+  2. Dot klasser i hvilken man kan spesifisere hvordan dotten skal dannes, antall og hvor den skal eksplodere i vinduet.
+  3. En kontroller klasse som sørger for oppretting av dotter og sender disse til visning i vinduet. 
 
