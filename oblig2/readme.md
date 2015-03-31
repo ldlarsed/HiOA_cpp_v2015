@@ -8,16 +8,16 @@ Ferdig.
 
 [./oblig2_oppgave1](./oblig2_oppgave1)
 
-**Eksempel**
+**Eksempel (klikk bilde for video)**
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/7vy-m6He2AQ" frameborder="0" allowfullscreen></iframe>
+[![fireworks](http://img.youtube.com/vi/7vy-m6He2AQ/0.jpg)](http://www.youtube.com/watch?v=7vy-m6He2AQ)
 
 ##Oppgave 2
 Ferdig. 
 
-**Eksempel**
+**Eksempel (klikk bilde for video)**
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/Z7f-Y00N1kc" frameborder="0" allowfullscreen></iframe>
+[![fireworks2](http://img.youtube.com/vi/Z7f-Y00N1kc/0.jpg)](http://www.youtube.com/watch?v=Z7f-Y00N1kc)
 
 [./oblig2_oppgave2](./oblig2_oppgave2)
 
@@ -25,9 +25,9 @@ Ferdig.
 Ferdig. 
 Den statiske funksjonen blir kalt opp i `rocket.cpp` på linje 21 ifølge `dot* _dot = TintedDotFactory<FL_RED>::create_dot(x,y);`.
 
-**Eksempel**
+**Eksempel (klikk bilde for video)**
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/bs6fM0CUGkw" frameborder="0" allowfullscreen></iframe>
+[![fireworks3](http://img.youtube.com/vi/bs6fM0CUGkw/0.jpg)](http://www.youtube.com/watch?v=bs6fM0CUGkw)
 
 [./oblig2_oppgave3](./oblig2_oppgave3)
 
