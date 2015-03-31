@@ -10,17 +10,24 @@ Ferdig.
 
 **Eksempel**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=7vy-m6He2AQ
-" target="_blank"><img src="http://img.youtube.com/vi/7vy-m6He2AQ/0.jpg" 
-alt="fireworks" width="240" height="180" border="10" /></a>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/7vy-m6He2AQ" frameborder="0" allowfullscreen></iframe>
 
 ##Oppgave 2
 Ferdig. 
+
+**Eksempel**
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Z7f-Y00N1kc" frameborder="0" allowfullscreen></iframe>
+
 [./oblig2_oppgave2](./oblig2_oppgave2)
 
 ##Oppgave 3
 Ferdig. 
 Den statiske funksjonen blir kalt opp i `rocket.cpp` på linje 21 ifølge `dot* _dot = TintedDotFactory<FL_RED>::create_dot(x,y);`.
+
+**Eksempel**
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/bs6fM0CUGkw" frameborder="0" allowfullscreen></iframe>
 
 [./oblig2_oppgave3](./oblig2_oppgave3)
 
