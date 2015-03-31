@@ -28,13 +28,11 @@ fireworks2::fireworks2(const char* title, int w, int h, int _rocketcount) :
 				new rocket { 200, 5, (rand() % (100 + 400)), (rand() % w),
 						(rand() % (h - 400)), m_factory });
 
-	/*
-	 * Delete this i detructorn har bedre virkning.
-	 */
-//	delete n_factory, b_factory, t_factory, m_factory;
-
+//	delete n_factory;
+	delete b_factory;
+	delete t_factory;
+	delete m_factory;
 }
 
 fireworks2::~fireworks2() {
-	delete this;
 }

@@ -13,6 +13,5 @@ AbstractDotFactory::AbstractDotFactory() {
 }
 
 AbstractDotFactory::~AbstractDotFactory() {
-	delete this;
 }
 
