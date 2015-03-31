@@ -1,6 +1,7 @@
 #Oblig 2: Fyrverkeri
 
-Oppgave 1,2 og 3 kan kompileres med ´make fireworks´, ´make fireworks2´ eller ´make fireworks3´. For å slette alle kompilerte og binære filer bruk ´make clean´. Dersom ingen argument blir sendt til ´make´ kompileres kun oppgave 1. 
+##Kompilering med `make`
+Oppgave 1,2 og 3 kan kompileres med `make fireworks`, `make fireworks2` eller `make fireworks3`. For å slette alle kompilerte og binære filer bruk `make clean`. Dersom ingen argument blir sendt til `make` kompileres kun oppgave 1. 
 
 ##Oppgave 1
 Ferdig. 
@@ -11,7 +12,7 @@ Ferdig.
 [./oblig2_oppgave2](./oblig2_oppgave2)
 
 ##Oppgave 3
-Påbegynt. Foreløping noen mindre problemer med bruk av static og templates. Får ikke lagt inn ´FL_RED´ eller annen farge i form av en generic type. Foreløpig er det hårdkodet til ´FL_WHITE´.
+Påbegynt. Foreløping noen mindre problemer med bruk av static og templates. Får ikke lagt inn `FL_RED` eller annen farge i form av en generic type. Foreløpig er det hårdkodet til `FL_WHITE`.
 [./oblig2_oppgave3](./oblig2_oppgave3)
 
 ##Oppgave 4
@@ -23,7 +24,7 @@ Frivillig. Ikke implementert.
 
 ##Generelle problem
 Det er noen minneslekasjer i de fleste klassene. Håper å finne ut dette under labben. 
-´
+```
 [luke@weasel oblig2]$ valgrind ./fireworks 
 ==15640== Memcheck, a memory error detector
 ==15640== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
@@ -45,4 +46,4 @@ Det er noen minneslekasjer i de fleste klassene. Håper å finne ut dette under 
 ==15640== 
 ==15640== For counts of detected and suppressed errors, rerun with: -v
 ==15640== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-´
+```
