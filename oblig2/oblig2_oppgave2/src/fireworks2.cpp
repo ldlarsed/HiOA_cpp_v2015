@@ -8,10 +8,7 @@
 #include <iostream>
 #include "fireworks2.hpp"
 #include "rocket.hpp"
-#include "NormalDotFactory.hpp"
-#include "BlinkingDotFactory.hpp"
-#include "TintedDotFactory.hpp"
-#include "MixedDotFactory.hpp"
+
 
 fireworks2::fireworks2(const char* title, int w, int h, int _rocketcount) :
 		animation_canvas(title, w, h), rocketcount(_rocketcount) {
