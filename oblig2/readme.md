@@ -9,7 +9,10 @@ Ferdig.
 [./oblig2_oppgave1](./oblig2_oppgave1)
 
 **Eksempel**
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/7vy-m6He2AQ/0.jpg)](http://www.youtube.com/watch?v=7vy-m6He2AQ)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=7vy-m6He2AQ
+" target="_blank"><img src="http://img.youtube.com/vi/7vy-m6He2AQ/0.jpg" 
+alt="fireworks" width="240" height="180" border="10" /></a>
 
 ##Oppgave 2
 Ferdig. 
@@ -23,6 +26,7 @@ Den statiske funksjonen blir kalt opp i `rocket.cpp` på linje 21 ifølge `dot* 
 
 ##Oppgave 4
 Besvart. 
+
 [./answers_to_questions.md](./answers_to_questions.md)
 
 ##Oppgave 5
