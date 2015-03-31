@@ -7,11 +7,8 @@
 //============================================================================
 
 #include <iostream>
-#include <thread>
-#include <FL/Fl.H>
+#include <time.h>
 #include <FL/Fl_Window.H>
-#include <FL/Fl_Box.H>
-#include <FL/fl_draw.H>
 #include "fireworks.hpp"
 
 using namespace std;
@@ -25,18 +22,18 @@ int main(int argc, char** argv) {
 	const char *l = "Luke's Fireworks";
 
 	Fl_Window* window = new Fl_Window { w, h, l};
-	window->color(FL_DARK_BLUE);
+	window->color(FL_BLACK);
 //	fireworks* f = new fireworks { l, w, h, 30 };
 	new fireworks { l, w, h, 30 };
 
 	Fl::add_timeout(0.04, animation_canvas::timer, window);
 
 	window->end();
-	window->show(argc, argv);
+	window->show();
 
 	Fl::run();
 
 //	delete l;
 //	delete f;
-//	delete window;
+	delete window;
 }

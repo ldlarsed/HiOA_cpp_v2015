@@ -14,6 +14,8 @@
 template<class T>
 class TintedDotFactory: public AbstractDotFactory {
 
+
+
 	Fl_Color colrand;
 public:
 	TintedDotFactory();
@@ -21,18 +23,6 @@ public:
 
 	dot* createDot(int x, int y);
 	static dot* create_dot(int x, int y);
-
-//	inline dot* create_dot(int x, int y) {
-//		return new dot_tinted { x, y, 5.0, FL_WHITE };
-//	};
-
-//	inline dot* TintedDotFactory<T>::createDot() {
-//		return new dot;
-//	};
-
-//	inline dot* createDot(int x, int y) {
-//		return NULL;
-//	};
 
 
 

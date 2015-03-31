@@ -22,17 +22,17 @@ has_color::has_color(bool Random) {
 	int r = 0, g = 0, b = 0;
 
 	if (r_main == 0) {
-		r = 200 + (rand() % 55);
-		g = 0 + (rand() % 55);
-		b = 0 + (rand() % 55);
+		r = 200 + rand() % 55;
+		g = 0 + rand() % 55;
+		b = 0 + rand() % 55;
 	} else if (r_main == 1) {
-		r = 0 + (rand() % 55);
-		g = 200 + (rand() % 55);
-		b = 200 + (rand() % 55);
+		r = 0 + rand() % 55;
+		g = 200 + rand() % 55;
+		b = 200 + rand() % 55;
 	} else {
-		r = 200 + (rand() % 55);
-		g = 200 + (rand() % 55);
-		b = 200 + (rand() % 55);
+		r = 0 + rand() % 55;
+		g = 200 + rand() % 55;
+		b = 0 + rand() % 55;
 	}
 
 //	std::cout << "r_main: " << r_main << " ";
@@ -67,7 +67,7 @@ void has_color::darken_color() {
 	 * Originalfunksjonen setter fargen kun til sort.
 	 * Setter derfor denne til å bli samme som bakgrunnen.
 	 */
-	color_ = FL_DARK_BLUE;
+	color_ = FL_BLACK;
 }
 
 void has_color::lighten_color() {

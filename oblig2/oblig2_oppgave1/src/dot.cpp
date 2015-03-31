@@ -15,23 +15,18 @@
  */
 dot::dot(float _x, float _y, float _r) :
 		is_vector(_x, _y), has_color(true), r(_r) {
-
-	t=10; //Bruker denne som nedtelling
 }
 
 dot::dot(float _x, float _y, float _r, Color c) :
 		is_vector(_x, _y), has_color(c), r(_r) {
 
-	t=10; //Bruker denne som nedtelling
-
 }
 
 dot::~dot() {
-	delete this;
+//	delete this;
 }
 
 void dot::draw() {
-
 
 	fl_color(color());
 	fl_pie(x(),y(),r,r,0,360);
@@ -41,8 +36,6 @@ void dot::draw() {
 void dot::operator ++() {
 	increment_position();
 	draw();
-//	lighten_color();
-//	darken_color();
 
 	if(speed()<1)
 		darken_color();
@@ -51,9 +44,7 @@ void dot::operator ++() {
 	}
 }
 
-
-
 void dot::reset() {
-	delete this;
+//	delete this;
 }
 
