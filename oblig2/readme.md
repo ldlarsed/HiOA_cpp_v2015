@@ -5,7 +5,11 @@ Oppgave 1,2 og 3 kan kompileres med `make fireworks`, `make fireworks2` eller `m
 
 ##Oppgave 1
 Ferdig. 
+
 [./oblig2_oppgave1](./oblig2_oppgave1)
+
+**Eksempel**
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/7vy-m6He2AQ/0.jpg)](http://www.youtube.com/watch?v=7vy-m6He2AQ)
 
 ##Oppgave 2
 Ferdig. 
@@ -14,6 +18,7 @@ Ferdig.
 ##Oppgave 3
 Ferdig. 
 Den statiske funksjonen blir kalt opp i `rocket.cpp` på linje 21 ifølge `dot* _dot = TintedDotFactory<FL_RED>::create_dot(x,y);`.
+
 [./oblig2_oppgave3](./oblig2_oppgave3)
 
 ##Oppgave 4
@@ -23,5 +28,5 @@ Besvart.
 ##Oppgave 5
 Frivillig. Ikke implementert. 
 
-##Generelle problem
+##Øvrig
 Ingen minneslekasjer blir rapportert i valgrind.
