@@ -13,8 +13,6 @@
 class dot_tinted: public dot {
 public:
 	using dot::dot; //Bruker super
-//	dot_tinted();
-//	virtual ~dot_tinted();
 };
 
 #endif /* DOT_TINTED_HPP_ */

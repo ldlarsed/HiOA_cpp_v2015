@@ -29,7 +29,6 @@ TintedDotFactory::TintedDotFactory() {
 }
 
 TintedDotFactory::~TintedDotFactory() {
-	// TODO Auto-generated destructor stub
 }
 
 dot* TintedDotFactory::createDot(int x, int y) {

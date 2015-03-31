@@ -13,8 +13,6 @@
 class dot_blinking: public dot {
 public:
 	using dot::dot;
-//	dot_blinking();
-//	virtual ~dot_blinking();
 
 	void operator++() override;
 

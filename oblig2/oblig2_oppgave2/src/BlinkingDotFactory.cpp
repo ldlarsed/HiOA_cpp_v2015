@@ -14,7 +14,6 @@ BlinkingDotFactory::BlinkingDotFactory() {
 }
 
 BlinkingDotFactory::~BlinkingDotFactory() {
-	delete this;
 }
 
 dot* BlinkingDotFactory::createDot(int x, int y){

@@ -67,7 +67,7 @@ void has_color::darken_color() {
 	 * Originalfunksjonen setter fargen kun til sort.
 	 * Setter derfor denne til å bli samme som bakgrunnen.
 	 */
-	color_ = FL_DARK_BLUE;
+	color_ = FL_BLACK;
 }
 
 void has_color::lighten_color() {

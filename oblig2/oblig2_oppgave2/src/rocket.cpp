@@ -19,7 +19,6 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y) :
 	for (int i = 0; i < _dotcount; i++) {
 		dot* _dot = new dot { x, y, dotsize };
 		dots.push_back(_dot);
-//		delete _dot;
 	}
 }
 
@@ -28,7 +27,6 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y,
 		dotcount(_dotcount), fuse(_fuse) {
 
 	//Fyller rocket med dots.
-	//OBS! Her finns det minneslekasje
 	for (int i = 0; i < _dotcount; i++) {
 		dot* _dot = dotFactory->createDot(x, y);
 		dots.push_back(_dot);
@@ -38,7 +36,6 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y,
 rocket::~rocket() {
 	for(auto i : dots)
 		delete i;
-	delete this;
 }
 
 
@@ -46,7 +43,6 @@ rocket::~rocket() {
  * Eksploderer rocketen
  */
 void rocket::operator++() {
-
 
 //Prøver å lage fuse på en annen måte enn med threads
 	if (fuse == 0) {
