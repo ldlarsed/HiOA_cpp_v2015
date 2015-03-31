@@ -5,7 +5,6 @@
  *      Author: luke
  */
 
-#include <iostream>
 #include <unistd.h>
 #include <stdlib.h>
 #include <cstdlib>
@@ -21,7 +20,6 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y) :
 //		dot* _dot = new dot { x, y, dotsize };
 		dot* _dot = TintedDotFactory<int>::create_dot(x,y);
 		dots.push_back(_dot);
-//		delete _dot;
 	}
 }
 
@@ -30,7 +28,6 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y,
 		dotcount(_dotcount), fuse(_fuse) {
 
 	//Fyller rocket med dots.
-	//OBS! Her finns det minneslekasje
 	for (int i = 0; i < _dotcount; i++) {
 		dot* _dot = dotFactory->createDot(x, y);
 		dots.push_back(_dot);
@@ -40,7 +37,6 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y,
 rocket::~rocket() {
 	for(auto i : dots)
 		delete i;
-	delete this;
 }
 
 
@@ -49,8 +45,6 @@ rocket::~rocket() {
  */
 void rocket::operator++() {
 
-
-//Prøver å lage fuse på en annen måte enn med threads
 	if (fuse == 0) {
 		for (dot* d : dots)
 			++(*d);

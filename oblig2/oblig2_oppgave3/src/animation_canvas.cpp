@@ -17,14 +17,11 @@
 animation_canvas::animation_canvas(const char *l, int w, int h) :
 		Fl_Box(0, 0, 800, 600) {
 
-//	std::cout << "animation_canvas started" << std::endl;
-
 }
 
 animation_canvas::~animation_canvas() {
 	for (auto i : parts)
 		delete i;
-	delete this;
 }
 
 void animation_canvas::add(animated* part) {
@@ -33,7 +30,6 @@ void animation_canvas::add(animated* part) {
 
 void animation_canvas::timer(void* canvas) {
 	Fl::repeat_timeout((0.04), timer, canvas);
-//	((animation_canvas*) canvas)->draw(); //Denne trenger man ikke.
 	((Fl_Box*) canvas)->redraw();
 }
 

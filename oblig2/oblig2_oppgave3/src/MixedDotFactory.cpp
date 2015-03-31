@@ -15,7 +15,6 @@ MixedDotFactory::MixedDotFactory(NormalDotFactory* n, BlinkingDotFactory* m) {
 }
 
 MixedDotFactory::~MixedDotFactory() {
-	delete this;
 }
 
 dot* MixedDotFactory::createDot(int x, int y){
