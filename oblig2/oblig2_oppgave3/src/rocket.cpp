@@ -18,7 +18,7 @@ rocket::rocket(int _dotcount, int dotsize, int _fuse, int x, int y) :
 	//Fyller rocket med dots
 	for (int i = 0; i < _dotcount; i++) {
 //		dot* _dot = new dot { x, y, dotsize };
-		dot* _dot = TintedDotFactory<int>::create_dot(x,y);
+		dot* _dot = TintedDotFactory<FL_RED>::create_dot(x,y);
 		dots.push_back(_dot);
 	}
 }

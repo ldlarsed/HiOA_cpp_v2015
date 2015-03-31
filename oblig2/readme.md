@@ -12,7 +12,8 @@ Ferdig.
 [./oblig2_oppgave2](./oblig2_oppgave2)
 
 ##Oppgave 3
-Påbegynt. Foreløping noen mindre problemer med bruk av static og templates. Får ikke lagt inn `FL_RED` eller annen farge i form av en generic type. Foreløpig er det hårdkodet til `FL_WHITE`.
+Ferdig. 
+Den statiske funksjonen blir kalt opp i `rocket.cpp` på linje 21 ifølge `dot* _dot = TintedDotFactory<FL_RED>::create_dot(x,y);`.
 [./oblig2_oppgave3](./oblig2_oppgave3)
 
 ##Oppgave 4

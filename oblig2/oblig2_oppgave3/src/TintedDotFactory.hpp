@@ -11,10 +11,8 @@
 #include "AbstractDotFactory.hpp"
 #include "dot_tinted.hpp"
 
-template<class T>
+template<Fl_Color T>
 class TintedDotFactory: public AbstractDotFactory {
-
-
 
 	Fl_Color colrand;
 public:
@@ -24,11 +22,9 @@ public:
 	dot* createDot(int x, int y);
 	static dot* create_dot(int x, int y);
 
-
-
 };
 
-template<class T>
+template<Fl_Color T>
 TintedDotFactory<T>::TintedDotFactory() {
 
 	int p = rand() % 3;
@@ -49,12 +45,12 @@ TintedDotFactory<T>::TintedDotFactory() {
 	}
 }
 
-template<class T>
+template<Fl_Color T>
 TintedDotFactory<T>::~TintedDotFactory() {
 	// TODO Auto-generated destructor stub
 }
 
-template<class T>
+template<Fl_Color T>
 dot* TintedDotFactory<T>::createDot(int x, int y) {
 
 //Ratio av den valgte fargen
@@ -66,11 +62,15 @@ dot* TintedDotFactory<T>::createDot(int x, int y) {
 	return new dot { x, y, 5.0 };
 }
 
-template<class T>
-dot* TintedDotFactory<T>::create_dot(int x, int y){
+template<Fl_Color T>
+dot* TintedDotFactory<T>::create_dot(int x, int y) {
 
-	return new dot_tinted { x, y, 5.0, FL_WHITE };
+	int t = rand() % 8;
+
+	if (t < 5)
+		return new dot_tinted { x, y, 5.0, T };
+
+	return new dot { x, y, 5.0 };
 }
-
 
 #endif /* TINTEDDOTFACTORY_HPP_ */
