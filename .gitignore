@@ -5,6 +5,9 @@
 blackjack
 oppvarming
 
+#For QT Creator
+debug-*
+*.user
 
 ##Eclipse
 *.pydevproject
