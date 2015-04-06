@@ -6,7 +6,7 @@ blackjack
 oppvarming
 
 #For QT Creator
-debug-*
+build-*
 *.user
 
 ##Eclipse
