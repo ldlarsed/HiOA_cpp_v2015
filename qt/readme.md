@@ -15,6 +15,9 @@ Installer Qt Creator med tilhørende pakker gjennom:
 `yum install gt-creator*`
 
 Deretter legg til `qt-devel*` som er nødvendig for autocomplete og andre ting.
+For å få med alle pakker er det også lurt å installere alle qt5 tilleg med `qt5*`.
+
+Dersom disse ikke finnes i repositoryn kan de lastes ned med hjelp av Qt-OnlineInstaller som er tilgjengelig for alle Linux, PC og Mac: [https://www.qt.io/download-open-source/](https://www.qt.io/download-open-source/)
 
 ##Øvrig
 Qt Creator kan klage iblandt på den binære filen er utenfor mappen til prosjektet. Dette har en tendesn til å komme opp dersom man ikke har foretatt en build på prosjektet. 
