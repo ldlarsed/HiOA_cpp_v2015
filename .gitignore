@@ -8,6 +8,7 @@ oppvarming
 #For QT Creator
 build-*
 *.user
+*.user.*
 
 ##Eclipse
 *.pydevproject
