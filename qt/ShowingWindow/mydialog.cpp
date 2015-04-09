@@ -12,3 +12,9 @@ MyDialog::~MyDialog()
 {
     delete ui;
 }
+
+void MyDialog::on_pushButton_clicked()
+{
+    this->close();
+
+}

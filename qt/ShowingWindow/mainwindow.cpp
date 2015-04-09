@@ -28,3 +28,9 @@ void MainWindow::on_actionNew_Window_triggered()
     //    mDialog.setModal(true); //Modal medfører at dialogen tar over fokus fra bakliggende applikasjon
     //    mDialog.exec();
 }
+
+void MainWindow::on_actionAbout_triggered()
+{
+    aBout = new About(this);
+    aBout->show();
+}
