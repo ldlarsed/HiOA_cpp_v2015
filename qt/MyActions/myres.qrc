@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>img/document-new.png</file>
+        <file>img/document-save.png</file>
+        <file>img/folder-new.png</file>
+    </qresource>
+</RCC>
