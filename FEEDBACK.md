@@ -1,7 +1,7 @@
 # Oblig 1
 
 ### Resultat: 
-Godkjent!, Lever på nytt, Ikke godkjent
+Godkjent!
 
 
 ### Checklist:
