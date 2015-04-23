@@ -82,3 +82,49 @@ Det virker også som at valgrind gir minnelekasje:
 	==21754==      possibly lost: 0 bytes in 0 blocks
 	==21754==    still reachable: 0 bytes in 0 blocks
 	==21754==         suppressed: 0 bytes in 0 blocks
+
+
+---
+
+# Oblig 2
+
+### Resultat: 
+Godkjent
+
+
+### Checklist:
+* [x] Prosjektet innholder makefile med følgende kommando:
+	* [x] `make` - bygger fireworks
+	* [x] `make fireworks` - bygger fireworks
+	* [x] `make fireworks2` - bygger fireworks2
+	* [x] `make clean` - fjerner alle kompilerte filer
+	
+* [x] **fireworks** oppfyller kravene.
+	* [x] Raketter starter på forskjellig tid og plass.
+	* [x] Raketter har dotter med en hastighet og med ulike farger (med overvekt av en farge) og retning.
+	* [x] Arv og polymorfi er brukt slikt det er tenkt.
+	
+* [x] **fireworks2** oppfyller kravene.
+	* [x] Factory er implementert.
+	* [x] Template er implementert.
+
+* [x] Header-filene skal være uforandret.
+* [x] Ingen alvorlige kjøretidsfeil (segfault etc.)
+* [x] Ingen minnelekasjer funnet med `valgrind`.
+* [x] Repo innholder `answers_to_questions.md`.
+	* [x] Spørsmålene er godt besvart.
+
+* [] Det er laget en egen animasjon **(optional)**
+	* [] Kompileres med `make custom`.
+	* [] `animation_canvas` og `animated` er brukt.
+	* [] Minst tre animerte elementer.
+
+
+### Tilbakemelding:
+*Kommentar gis ved forespørsel.*
+
+Klarer ikke å se at `tinted_dot` er fullført. Godkjent!
+
+#### Fix:
+
+---
